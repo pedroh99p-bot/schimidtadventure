@@ -174,13 +174,13 @@
                 linear-gradient(135deg, rgba(10, 15, 20, 0.95) 0%, rgba(59, 130, 246, 0.3) 50%, rgba(10, 15, 20, 0.95) 100%),
                 url('https://res.cloudinary.com/dm9mnc97u/image/upload/v1776697758/3478261313_18ef5854aa_h_xduap4.jpg');
             background-size: cover;
-            background-position: 80% center; /* Foco na metade direita em dispositivos menores */
+            background-position: 80% 30%; /* Foco na metade direita em dispositivos menores, e um pouco mais acima */
             position: relative;
         }
 
         @media (min-width: 768px) {
             .hero-bg {
-                background-position: center;
+                background-position: center 30%; /* Imagem um pouco mais acima no desktop */
                 background-attachment: fixed; /* Fixed mantido apenas no desktop para evitar lag no mobile */
             }
         }
