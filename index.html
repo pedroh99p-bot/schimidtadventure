@@ -174,14 +174,14 @@
                 linear-gradient(135deg, rgba(10, 15, 20, 0.95) 0%, rgba(59, 130, 246, 0.3) 50%, rgba(10, 15, 20, 0.95) 100%),
                 url('https://res.cloudinary.com/dm9mnc97u/image/upload/v1776697758/3478261313_18ef5854aa_h_xduap4.jpg');
             background-size: cover;
-            background-position: 80% 30%; /* Foco na metade direita em dispositivos menores, e um pouco mais acima */
+            background-position: 80% 30%;
             position: relative;
         }
 
         @media (min-width: 768px) {
             .hero-bg {
-                background-position: center 30%; /* Imagem um pouco mais acima no desktop */
-                background-attachment: fixed; /* Fixed mantido apenas no desktop para evitar lag no mobile */
+                background-position: center 30%;
+                background-attachment: fixed;
             }
         }
 
@@ -213,7 +213,7 @@
             100% { background-position: -200% center; }
         }
         .text-shine {
-            background: linear-gradient(to right, #FFFFFF 20%, #FBBF24 40%, #FFFFFF 60%); /* Brilho amarelo no texto */
+            background: linear-gradient(to right, #FFFFFF 20%, #FBBF24 40%, #FFFFFF 60%);
             background-size: 200% auto;
             color: transparent;
             -webkit-background-clip: text;
@@ -226,7 +226,7 @@
             background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.02' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3Ccircle cx='13' cy='13' r='1'/%3E%3C/g%3E%3C/svg%3E");
         }
 
-        /* Scroll Reveal (Refatorado para melhor performance) */
+        /* Scroll Reveal */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -242,7 +242,7 @@
         .particle {
             position: absolute;
             border-radius: 50%;
-            background-color: var(--color-accent-2); /* Voltou para o azul original */
+            background-color: var(--color-accent-2);
             opacity: 0.25;
             pointer-events: none;
             animation: float 10s infinite ease-in-out alternate;
@@ -437,7 +437,7 @@
             <h1 class="h1-fluid font-bold text-shine drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] mb-6" data-i18n="hero_title">
                 Sua aventura na Pedra da Gávea começa aqui
             </h1>
-            <p class="text-base md:text-lg lg:text-xl text-text-muted mb-10 max-w-[600px] mx-auto font-light leading-relaxed drop-shadow-md" data-i18n="hero_subtitle">
+            <p class="text-base md:text-lg lg:text-xl text-white mb-16 max-w-[600px] mx-auto font-light leading-relaxed drop-shadow-md" data-i18n="hero_subtitle">
                 Trilha guiada com segurança, ritmo certo e acompanhamento profissional do início ao fim.
             </p>
             
@@ -452,19 +452,31 @@
                 </a>
             </div>
 
-            <!-- Trust Badges -->
-            <div class="flex flex-wrap items-center justify-center gap-3 md:gap-5 text-xs md:text-sm text-text-muted font-medium">
-                <div class="flex items-center gap-2 bg-surface-2/80 backdrop-blur rounded-full px-4 py-2 border border-border">
-                    <i data-lucide="shield-check" class="w-4 h-4 text-accent-2"></i>
+            <!-- Trust Badges Expandidos -->
+            <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3 text-[10px] md:text-xs text-text-muted font-medium px-2">
+                <div class="flex items-center gap-1.5 bg-surface-2/80 backdrop-blur rounded-full px-3 py-1.5 border border-border">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent-2"></i>
                     <span data-i18n="badge_certified">Guia certificado</span>
                 </div>
-                <div class="flex items-center gap-2 bg-surface-2/80 backdrop-blur rounded-full px-4 py-2 border border-border">
-                    <i data-lucide="mountain-snow" class="w-4 h-4 text-accent-2"></i>
+                <div class="flex items-center gap-1.5 bg-surface-2/80 backdrop-blur rounded-full px-3 py-1.5 border border-border">
+                    <i data-lucide="mountain-snow" class="w-3.5 h-3.5 text-accent-2"></i>
                     <span data-i18n="badge_climbs">+100 subidas</span>
                 </div>
-                <div class="flex items-center gap-2 bg-surface-2/80 backdrop-blur rounded-full px-4 py-2 border border-border hidden sm:flex">
-                    <i data-lucide="heart-pulse" class="w-4 h-4 text-accent-2"></i>
+                <div class="flex items-center gap-1.5 bg-surface-2/80 backdrop-blur rounded-full px-3 py-1.5 border border-border">
+                    <i data-lucide="heart-pulse" class="w-3.5 h-3.5 text-accent-2"></i>
                     <span data-i18n="badge_safety">Segurança em 1º lugar</span>
+                </div>
+                <div class="flex items-center gap-1.5 bg-surface-2/80 backdrop-blur rounded-full px-3 py-1.5 border border-border">
+                    <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400"></i>
+                    <span data-i18n="badge_rating">Avaliação 5/5</span>
+                </div>
+                <div class="flex items-center gap-1.5 bg-surface-2/80 backdrop-blur rounded-full px-3 py-1.5 border border-border">
+                    <i data-lucide="camera" class="w-3.5 h-3.5 text-accent-2"></i>
+                    <span data-i18n="badge_photos">Fotos incríveis</span>
+                </div>
+                <div class="flex items-center gap-1.5 bg-surface-2/80 backdrop-blur rounded-full px-3 py-1.5 border border-border">
+                    <i data-lucide="footprints" class="w-3.5 h-3.5 text-accent-2"></i>
+                    <span data-i18n="badge_pace">Ritmo Adaptado</span>
                 </div>
             </div>
         </div>
@@ -479,6 +491,7 @@
 
     <!-- 4. Problem -> Solution Section (Flip Cards) -->
     <section class="py-16 lg:py-24 px-4 md:px-6 bg-bg relative">
+        <!-- ... section mantida idêntica ... -->
         <div class="max-w-[480px] md:max-w-[720px] lg:max-w-[1100px] mx-auto">
             <div class="text-center mb-10 lg:mb-14 reveal">
                 <h2 class="h2-fluid font-bold text-white mb-3" data-i18n="ps_title">Por que não ir sozinho?</h2>
@@ -584,7 +597,7 @@
                     Sou o fundador da SCHIMIDT ADVENTURE. Com atendimento humano, fluência em 3 idiomas e profundo respeito à montanha, garanto que sua experiência na trilha mais icônica do Rio seja segura, no seu ritmo e absolutamente inesquecível.
                 </p>
 
-                <!-- Stats com Contador usando Fonte Space Grotesk (.font-numbers) -->
+                <!-- Stats com Contador -->
                 <div class="grid grid-cols-3 gap-2 border-y border-border py-6 mb-8" id="stats-container">
                     <div class="text-center">
                         <span class="block text-3xl lg:text-4xl font-numbers font-bold text-accent mb-1"><span class="count-up" data-val="5">0</span>+</span>
@@ -770,9 +783,8 @@
                     <a href="https://wa.me/5521967752633?text=Olá, quero saber mais sobre o Plano Prata." target="_blank" class="w-full text-[14px] mt-auto py-3 px-6 rounded-full border border-slate-400 text-slate-300 hover:bg-slate-400 hover:text-[#0A0F14] transition-colors text-center font-semibold" data-i18n="pkg_btn">Agendar este</a>
                 </div>
 
-                <!-- Pacote 2: Ouro (Corrigido para usar Tag Interna e sem Margem Negativa) -->
+                <!-- Pacote 2: Ouro -->
                 <div class="bg-[#1A1814] border-2 border-amber-400 rounded-3xl p-6 lg:p-8 hover:border-amber-300 transition-colors shadow-[0_0_25px_rgba(251,191,36,0.15)] reveal z-10 flex flex-col h-auto shrink-0 w-[85vw] max-w-[320px] md:w-[320px] snap-center relative select-none">
-                    <!-- Topo Alinhado Corretamente para o Carrossel -->
                     <div class="flex flex-col justify-start mb-4">
                         <div class="bg-amber-400 text-[#0A0F14] px-3 py-1 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wide inline-flex self-start mb-3 shadow-md" data-i18n="p2_tag">Mais Recomendado</div>
                         <div class="w-10 h-10 rounded-full bg-amber-400/10 flex items-center justify-center">
@@ -1015,6 +1027,7 @@
 
     <!-- 10. FAQ -->
     <section id="faq" class="py-16 lg:py-24 px-4 md:px-6 bg-surface bg-texture relative border-t border-border">
+        <!-- ... section mantida idêntica ... -->
         <div class="max-w-[480px] md:max-w-[720px] mx-auto reveal relative z-10">
             <div class="text-center mb-10 lg:mb-14">
                 <h2 class="h2-fluid font-bold text-white mb-3" data-i18n="faq_title">Dúvidas Frequentes</h2>
@@ -1127,34 +1140,66 @@
         </div>
     </section>
 
-    <!-- 12. Oferta Final (Conversão) -->
-    <section class="py-16 lg:py-24 px-4 md:px-6 relative overflow-hidden hero-bg border-y border-border">
-        <!-- Decoration -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] lg:w-[600px] h-[400px] lg:h-[600px] bg-accent opacity-[0.05] rounded-full blur-[80px] lg:blur-[100px] pointer-events-none"></div>
+    <!-- 12. Oferta Final (Conversão) COM URGÊNCIA -->
+    <section class="py-16 lg:py-24 px-4 md:px-6 relative overflow-hidden hero-bg border-y border-border flex items-center justify-center">
+        <!-- Dark Overlay over the Hero BG for contrast -->
+        <div class="absolute inset-0 bg-bg/50 backdrop-blur-[2px] pointer-events-none"></div> 
 
-        <div class="max-w-[480px] md:max-w-[720px] lg:max-w-[900px] mx-auto text-center relative z-10 reveal">
-            <h2 class="text-[clamp(2rem,8vw,4.5rem)] font-display font-bold text-white leading-tight mb-6 lg:mb-8" data-i18n="final_title">
-                Pronto para conquistar o topo?
-            </h2>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-8 lg:gap-12 mb-10 lg:mb-12 text-text-muted text-[13px] md:text-sm lg:text-base">
-                <div class="flex items-center gap-2">
-                    <i data-lucide="check-circle-2" class="w-5 h-5 text-accent-2"></i>
-                    <span data-i18n="final_b1">Segurança técnica</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i data-lucide="check-circle-2" class="w-5 h-5 text-accent-2"></i>
-                    <span data-i18n="final_b2">Guia Multilíngue</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i data-lucide="check-circle-2" class="w-5 h-5 text-accent-2"></i>
-                    <span data-i18n="final_b3">Fotos incríveis</span>
-                </div>
-            </div>
+        <div class="max-w-[800px] w-full relative z-10 reveal">
             
-            <a href="https://wa.me/5521967752633" target="_blank" class="btn-primary shine-effect text-[15px] md:text-lg px-8 lg:px-12 py-4 lg:py-5 shadow-[0_0_20px_rgba(45,212,191,0.2)] w-full sm:w-auto" data-i18n="final_cta">
-                Agendar Minha Trilha Agora
-                <i data-lucide="arrow-right" class="w-5 h-5 lg:w-6 lg:h-6"></i>
-            </a>
+            <div class="bg-surface/80 backdrop-blur-xl border border-accent/40 rounded-3xl p-8 md:p-10 lg:p-12 shadow-[0_0_60px_rgba(45,212,191,0.15)] text-center relative">
+                
+                <!-- Escassez Badge -->
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-600 text-white px-5 py-1.5 rounded-full text-[11px] md:text-xs font-bold tracking-widest uppercase shadow-[0_0_20px_rgba(220,38,38,0.5)] flex items-center gap-2 animate-pulse whitespace-nowrap">
+                    <i data-lucide="flame" class="w-4 h-4"></i> <span data-i18n="final_badge">Vagas Esgotando</span>
+                </div>
+
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-white leading-tight mb-4" data-i18n="final_title">
+                    Pronto para conquistar o topo?
+                </h2>
+                
+                <p class="text-text-muted text-sm md:text-base mb-8 max-w-[600px] mx-auto leading-relaxed" data-i18n="final_subtitle">
+                    Restam poucas vagas para os grupos desta semana. Garanta sua experiência premium com segurança e conforto antes que acabem.
+                </p>
+
+                <!-- Cronômetro (Countdown) -->
+                <div class="flex justify-center gap-3 md:gap-5 mb-10">
+                    <div class="bg-surface-2 border border-border rounded-xl w-16 h-16 md:w-20 md:h-20 flex flex-col items-center justify-center shadow-inner">
+                        <span id="cd-hours" class="text-2xl md:text-3xl font-numbers font-bold text-white">00</span>
+                        <span class="text-[9px] md:text-[10px] text-text-muted uppercase tracking-wider">Horas</span>
+                    </div>
+                    <span class="text-2xl md:text-3xl font-bold text-text-muted self-center animate-pulse pb-4">:</span>
+                    <div class="bg-surface-2 border border-border rounded-xl w-16 h-16 md:w-20 md:h-20 flex flex-col items-center justify-center shadow-inner">
+                        <span id="cd-minutes" class="text-2xl md:text-3xl font-numbers font-bold text-white">00</span>
+                        <span class="text-[9px] md:text-[10px] text-text-muted uppercase tracking-wider">Min</span>
+                    </div>
+                    <span class="text-2xl md:text-3xl font-bold text-text-muted self-center animate-pulse pb-4">:</span>
+                    <div class="bg-surface-2 border border-border rounded-xl w-16 h-16 md:w-20 md:h-20 flex flex-col items-center justify-center shadow-inner">
+                        <span id="cd-seconds" class="text-2xl md:text-3xl font-numbers font-bold text-accent-2">00</span>
+                        <span class="text-[9px] md:text-[10px] text-text-muted uppercase tracking-wider">Seg</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8 lg:gap-10 mb-10 text-white text-[13px] md:text-sm font-medium">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-accent-2"></i>
+                        <span data-i18n="final_b1">Segurança técnica</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-accent-2"></i>
+                        <span data-i18n="final_b2">Guia Multilíngue</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-accent-2"></i>
+                        <span data-i18n="final_b3">Fotos incríveis</span>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/5521967752633" target="_blank" class="btn-primary shine-effect text-[15px] md:text-lg px-8 lg:px-12 py-4 shadow-[0_0_25px_rgba(45,212,191,0.3)] w-full sm:w-auto transform hover:-translate-y-1 hover:scale-[1.02] transition-all" data-i18n="final_cta">
+                    Garantir Minha Vaga Agora
+                    <i data-lucide="zap" class="w-5 h-5 lg:w-6 lg:h-6 fill-current"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -1225,7 +1270,8 @@
                 
                 hero_title: "Sua aventura na Pedra da Gávea começa aqui", hero_subtitle: "Trilha guiada com segurança, ritmo certo e acompanhamento profissional do início ao fim.",
                 hero_btn_primary: "Reservar agora", hero_btn_secondary: "Falar com o guia",
-                badge_certified: "Guia certificado", badge_climbs: "+100 subidas", badge_languages: "Atendimento multilíngue", badge_safety: "Segurança em 1º lugar",
+                badge_certified: "Guia certificado", badge_climbs: "+100 subidas", badge_safety: "Segurança em 1º lugar", 
+                badge_rating: "Avaliação 5/5", badge_photos: "Fotos incríveis", badge_pace: "Ritmo Adaptado",
                 ps_title: "Por que não ir sozinho?", ps_subtitle: "A Pedra da Gávea é deslumbrante, mas exige respeito e preparo.",
                 
                 fc1_front_title: "Medo de ir sozinho", fc1_front_desc: "Trilha difícil, sem conhecer o caminho, riscos reais.", fc1_back_title: "Guia ao seu lado", fc1_back_desc: "Do encontro ao topo, você nunca fica sozinho. Segurança total.",
@@ -1269,7 +1315,8 @@
                 
                 map_title: "Onde a aventura começa", map_desc: "O acesso à trilha fica no Parque Nacional da Tijuca (Setor Pedra da Gávea), localizado na Estrada do Sorimã, Barra da Tijuca. O parque tem horário rígido de funcionamento e o ponto de encontro exato será enviado após a confirmação.",
                 map_lbl_loc: "Localização", map_val_loc: "Estrada do Sorimã - Barra da Tijuca, RJ", map_lbl_time: "Horários comuns", map_val_time: "Manhã (08h) ou a combinar", map_lbl_contact: "Contato Rápido",
-                final_title: "Pronto para conquistar o topo?", final_b1: "Segurança técnica", final_b2: "Guia Multilíngue", final_b3: "Fotos incríveis", final_cta: "Agendar Minha Trilha Agora",
+                
+                final_badge: "Vagas Esgotando", final_title: "Pronto para conquistar o topo?", final_subtitle: "Restam poucas vagas para os grupos desta semana. Garanta sua experiência premium com segurança e conforto antes que acabem.", final_b1: "Segurança técnica", final_b2: "Guia Multilíngue", final_b3: "Fotos incríveis", final_cta: "Garantir Minha Vaga Agora",
                 footer_desc: "Guia turístico premium especializado na Pedra da Gávea. Experiência, segurança e atendimento multilíngue para tornar sua aventura inesquecível.", footer_links_title: "Navegação", footer_contact_title: "Contato", footer_copy: "© 2026 SCHIMIDT ADVENTURE. Todos os direitos reservados.", footer_tag: "Segurança em primeiro lugar."
             },
             en: {
@@ -1278,7 +1325,8 @@
                 
                 hero_title: "Your Pedra da Gávea adventure starts here", hero_subtitle: "Guided trail with safety, perfect pacing, and professional support from start to finish.",
                 hero_btn_primary: "Book now", hero_btn_secondary: "Talk to the guide",
-                badge_certified: "Certified Guide", badge_climbs: "100+ Climbs", badge_languages: "Multilingual service", badge_safety: "Safety First",
+                badge_certified: "Certified Guide", badge_climbs: "100+ Climbs", badge_safety: "Safety First",
+                badge_rating: "5/5 Rating", badge_photos: "Amazing photos", badge_pace: "Adapted Pace",
                 ps_title: "Why not go alone?", ps_subtitle: "Pedra da Gávea is stunning, but demands respect and preparation.",
                 
                 fc1_front_title: "Fear of going alone", fc1_front_desc: "Hard trail, unknown path, real risks.", fc1_back_title: "Expert guide by your side", fc1_back_desc: "From meeting to top, you're never alone.",
@@ -1322,7 +1370,8 @@
                 
                 map_title: "Where the adventure begins", map_desc: "Trail access is in the Tijuca National Park, located at Estrada do Sorimã, Barra da Tijuca. The park has strict operating hours and the exact meeting point will be sent after confirmation.",
                 map_lbl_loc: "Location", map_val_loc: "Estrada do Sorimã - Barra da Tijuca, RJ", map_lbl_time: "Common times", map_val_time: "Morning (08h) or to be arranged", map_lbl_contact: "Quick Contact",
-                final_title: "Ready to conquer the top?", final_b1: "Technical safety", final_b2: "Multilingual Guide", final_b3: "Incredible photos", final_cta: "Book My Hike Now",
+                
+                final_badge: "Selling Out Fast", final_title: "Ready to conquer the top?", final_subtitle: "Few spots left for this week's groups. Secure your premium experience with safety and comfort before they run out.", final_b1: "Technical safety", final_b2: "Multilingual Guide", final_b3: "Incredible photos", final_cta: "Secure My Spot Now",
                 footer_desc: "Premium tour guide specialized in Pedra da Gávea. Experience, safety, and multilingual service to make your adventure unforgettable.", footer_links_title: "Navigation", footer_contact_title: "Contact", footer_copy: "© 2026 SCHIMIDT ADVENTURE. All rights reserved.", footer_tag: "Safety first."
             },
             es: {
@@ -1331,7 +1380,8 @@
                 
                 hero_title: "Tu aventura en Pedra da Gávea empieza aquí", hero_subtitle: "Sendero guiado con seguridad, ritmo adecuado y apoyo profesional de principio a fin.",
                 hero_btn_primary: "Reservar ahora", hero_btn_secondary: "Hablar con el guía",
-                badge_certified: "Guía Certificado", badge_climbs: "+100 Subidas", badge_languages: "Atención multilingüe", badge_safety: "La seguridad es lo 1º",
+                badge_certified: "Guía Certificado", badge_climbs: "+100 Subidas", badge_safety: "La seguridad es lo 1º",
+                badge_rating: "Valoración 5/5", badge_photos: "Fotos increíbles", badge_pace: "Ritmo Adaptado",
                 ps_title: "¿Por qué no ir solo?", ps_subtitle: "Pedra da Gávea es impresionante, pero exige respeto y preparación.",
                 
                 fc1_front_title: "Miedo a ir solo", fc1_front_desc: "Ruta difícil, sin conocer el camino, riesgos reales.", fc1_back_title: "Guía a tu lado", fc1_back_desc: "Del inicio a la cima, nunca estás solo.",
@@ -1375,7 +1425,8 @@
                 
                 map_title: "Donde comienza la aventura", map_desc: "El acceso es en el Parque Nacional de Tijuca, en la Estrada do Sorimã, Barra da Tijuca. El parque tiene horarios estrictos y el punto de encuentro se enviará tras confirmar.",
                 map_lbl_loc: "Ubicación", map_val_loc: "Estrada do Sorimã - Barra da Tijuca, RJ", map_lbl_time: "Horarios comunes", map_val_time: "Mañana (08h) o a convenir", map_lbl_contact: "Contacto Rápido",
-                final_title: "¿Listo para conquistar la cima?", final_b1: "Seguridad técnica", final_b2: "Guía Multilingüe", final_b3: "Fotos increíbles", final_cta: "Reservar Mi Sendero Ahora",
+                
+                final_badge: "Últimos Cupos", final_title: "¿Listo para conquistar la cima?", final_subtitle: "Quedan pocos lugares para los grupos de esta semana. Asegura tu experiencia premium con seguridad y comodidad antes de que se agoten.", final_b1: "Seguridad técnica", final_b2: "Guía Multilingüe", final_b3: "Fotos increíbles", final_cta: "Asegurar Mi Cupo Ahora",
                 footer_desc: "Guía turístico premium especializado en Pedra da Gávea. Experiencia, seguridad y atención multilingüe para hacer tu aventura inolvidable.", footer_links_title: "Navegación", footer_contact_title: "Contacto", footer_copy: "© 2026 SCHIMIDT ADVENTURE. Todos los derechos reservados.", footer_tag: "La seguridad es lo primero."
             }
         };
@@ -1519,7 +1570,6 @@
         // 5. FAQ Accordion
         function toggleFaq(button) {
             const content = button.nextElementSibling;
-            // O Lucide converte as tags <i> em <svg>, então precisamos selecionar o <svg> (ou dar fallback no <i>)
             const icon = button.querySelector('svg') || button.querySelector('i');
             const isOpen = content.style.maxHeight;
 
@@ -1579,7 +1629,7 @@
             });
         }, revealOptions);
 
-        // 8. Sticky Header (Refatorado para não gargalar a rolagem)
+        // 8. Sticky Header
         const navbar = document.getElementById('navbar');
         let isScrolling = false;
         
@@ -1619,10 +1669,49 @@
             }
         }
 
+        // 10. Oferta Final Countdown (Scarcity Trigger)
+        function initCountdown() {
+            let endTime = localStorage.getItem('sa_countdown_end');
+            const now = new Date().getTime();
+            
+            // Define o fim para 1 hora e 15 minutos se não existir ou tiver expirado (Loop de escassez)
+            if (!endTime || now > parseInt(endTime)) {
+                endTime = now + (1 * 60 * 60 * 1000) + (14 * 60 * 1000) + (59 * 1000); 
+                localStorage.setItem('sa_countdown_end', endTime);
+            } else {
+                endTime = parseInt(endTime);
+            }
+
+            const hoursEl = document.getElementById('cd-hours');
+            const minutesEl = document.getElementById('cd-minutes');
+            const secondsEl = document.getElementById('cd-seconds');
+
+            const timer = setInterval(() => {
+                const currentTime = new Date().getTime();
+                const distance = endTime - currentTime;
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                    localStorage.removeItem('sa_countdown_end');
+                    initCountdown(); // Restart the loop
+                    return;
+                }
+
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                if(hoursEl) hoursEl.innerText = hours.toString().padStart(2, '0');
+                if(minutesEl) minutesEl.innerText = minutes.toString().padStart(2, '0');
+                if(secondsEl) secondsEl.innerText = seconds.toString().padStart(2, '0');
+            }, 1000);
+        }
+
         // Init
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
             initParticles();
+            initCountdown();
             
             document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
             const statsContainer = document.getElementById('stats-container');
