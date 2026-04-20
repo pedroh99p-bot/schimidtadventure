@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCHIMIDT ADVENTURE | Trilha Guiada Pedra da Gávea - Rio de Janeiro</title>
+    <meta name="description" content="Trilha guiada premium para a Pedra da Gávea no Rio de Janeiro. Segurança, guias experientes e atendimento em PT, EN e ES. Agende sua aventura.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="SCHIMIDT ADVENTURE | Trilha Guiada Pedra da Gávea">
+    <meta property="og:description" content="Aventura segura com guias profissionais. Atendimento multilíngue na melhor trilha do Rio.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://schimidtadventure.com">
+    <meta property="og:image" content="https://schimidtadventure.com/og-image.jpg">
+
+    <!-- Fonts: Outfit (Body), DM Serif Display (Headings) & Space Grotesk (Numbers) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#0A0F14',
+                        surface: '#111820',
+                        'surface-2': '#162030',
+                        accent: '#2DD4BF',
+                        'accent-2': '#3B82F6',
+                        'accent-hover': '#14B8A6',
+                        text: '#F1F5F9',
+                        'text-muted': '#94A3B8',
+                        border: 'rgba(45,212,191,0.15)',
+                    },
+                    fontFamily: {
+                        body: ['Outfit', 'sans-serif'],
+                        display: ['DM Serif Display', 'serif'],
+                    },
+                    animation: {
+                        'marquee': 'marquee 30s linear infinite',
+                        'marquee-fast': 'marquee 15s linear infinite',
+                        'marquee-slow': 'marquee 40s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --color-bg: #0A0F14;
+            --color-surface: #111820;
+            --color-surface-2: #162030;
+            --color-accent: #2DD4BF;
+            --color-accent-2: #3B82F6;
+            --color-accent-hover: #14B8A6;
+            --color-white: #FFFFFF;
+            --color-text: #F1F5F9;
+            --color-text-muted: #94A3B8;
+            --color-border: rgba(45,212,191,0.15);
+            
+            --font-display: 'DM Serif Display', serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-numbers: 'Space Grotesk', sans-serif;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            font-size: clamp(0.9375rem, 2vw, 1rem);
+        }
+
+        h1, h2, .font-display, .logo-brand {
+            font-family: var(--font-display);
+        }
+
+        .font-numbers {
+            font-family: var(--font-numbers);
+            letter-spacing: -0.03em;
+        }
+
+        /* Typography Clamps */
+        .h1-fluid { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.1; }
+        .h2-fluid { font-size: clamp(1.5rem, 5vw, 2.5rem); line-height: 1.2; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--color-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--color-surface-2); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
+
+        /* Hide scrollbar for carousels */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: #0A0F14;
+            border-radius: 9999px;
+            padding: 14px 32px;
+            font-weight: 600;
+            transition: background 0.2s ease, transform 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: var(--font-body);
+        }
+        .btn-primary:hover {
+            background-color: var(--color-accent-hover);
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-accent);
+            border: 1.5px solid var(--color-accent);
+            border-radius: 9999px;
+            padding: 13px 30px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: var(--font-body);
+        }
+        .btn-secondary:hover {
+            background-color: var(--color-accent);
+            color: #0A0F14;
+            transform: translateY(-2px);
+        }
+
+        /* Language Flags */
+        .lang-flag {
+            background-color: transparent;
+            border: 1px solid var(--color-border);
+            height: 32px;
+            width: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 16px;
+            filter: grayscale(100%) opacity(0.6);
+        }
+        .lang-flag.active {
+            border-color: var(--color-accent);
+            filter: grayscale(0%) opacity(1);
+            background-color: rgba(45,212,191,0.1);
+            transform: scale(1.1);
+        }
+
+        /* Hero Background with Image and Azul Fade */
+        .hero-bg {
+            background-image: 
+                linear-gradient(135deg, rgba(10, 15, 20, 0.95) 0%, rgba(59, 130, 246, 0.3) 50%, rgba(10, 15, 20, 0.95) 100%),
+                url('https://res.cloudinary.com/dm9mnc97u/image/upload/v1776697758/3478261313_18ef5854aa_h_xduap4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        /* Light Sweep Effect (Shine) for Buttons */
+        @keyframes shine-sweep {
+            0% { left: 150%; }
+            100% { left: -150%; }
+        }
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .shine-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 150%;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-20deg);
+            animation: shine-sweep 3.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+
+        /* Text Shine Effect (Right to Left) */
+        @keyframes shine-text {
+            0% { background-position: 200% center; }
+            100% { background-position: -200% center; }
+        }
+        .text-shine {
+            background: linear-gradient(to right, #FFFFFF 20%, var(--color-accent-2) 40%, #FFFFFF 60%);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shine-text 5s linear infinite;
+        }
+
+        /* Textures */
+        .bg-texture {
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.02' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3Ccircle cx='13' cy='13' r='1'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Particles */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: var(--color-accent-2); /* Changed to blue for synergy */
+            opacity: 0.25;
+            pointer-events: none;
+            animation: float 10s infinite ease-in-out alternate;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            100% { transform: translateY(-100px) translateX(50px); }
+        }
+
+        /* Flip Cards CSS */
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+
+        /* Accordion transition */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        /* Floating Buttons Animation */
+        @keyframes pulse-whatsapp {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            50% { transform: scale(1.06); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .btn-floating-wa {
+            animation: pulse-whatsapp 2s infinite;
+            background-color: #25D366;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+        }
+        .btn-floating-ig {
+            background: radial-gradient(circle at 30% 110%, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            box-shadow: 0 4px 16px rgba(220, 39, 67, 0.35);
+        }
+        
+        /* Shape Dividers */
+        .shape-divider-bottom {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .shape-divider-bottom svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 40px;
+        }
+        .shape-divider-bottom .shape-fill { fill: var(--color-bg); }
+        .shape-fill-surface { fill: var(--color-surface); }
+
+    </style>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "SCHIMIDT ADVENTURE",
+      "image": "https://schimidtadventure.com/logo.jpg",
+      "description": "Guia turístico premium para trilha da Pedra da Gávea, Rio de Janeiro.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Rio de Janeiro",
+        "addressRegion": "RJ",
+        "addressCountry": "BR"
+      },
+      "priceRange": "$$",
+      "telephone": "+5521967752633"
+    }
+    </script>
+</head>
+<body class="relative overflow-hidden">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[99999] bg-bg flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out">
+        <div class="flex flex-col items-center reveal active">
+            <span class="logo-brand font-bold text-4xl text-text leading-none tracking-wide mb-1">SCHIMIDT</span>
+            <span class="text-[12px] tracking-[0.3em] text-accent mb-8 leading-none font-medium">ADVENTURE</span>
+            
+            <p class="text-text-muted text-xs md:text-sm mb-5 tracking-widest uppercase font-medium flex items-center gap-2">
+                <i data-lucide="mountain-snow" class="w-4 h-4 text-accent"></i> 
+                Preparando sua aventura...
+            </p>
+            
+            <!-- Loading bar -->
+            <div class="w-64 md:w-80 h-1.5 bg-surface-2 rounded-full overflow-hidden shadow-[0_0_15px_rgba(45,212,191,0.2)]">
+                <div class="h-full bg-accent w-0 rounded-full animate-[loadingBar_2s_ease-in-out_forwards]"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. Top Roller (Marquee de Autoridade) -->
+    <div class="fixed top-0 left-0 w-full h-[36px] bg-accent text-[#0A0F14] z-50 flex items-center overflow-hidden shadow-md">
+        <div class="flex items-center whitespace-nowrap animate-marquee hover:pause w-fit">
+            <!-- Bloco 1 -->
+            <div class="flex items-center gap-8 px-4 shrink-0">
+                <span class="font-bold text-[11px] md:text-xs tracking-wide uppercase"><span class="mr-1">🏆</span> Guia Especialista Certificado</span>
+                <span class="font-bold text-[11px] md:text-xs tracking-wide uppercase"><span class="mr-1">⛰️</span> +100 Subidas na Gávea</span>
+                <span class="font-bold text-[11px] md:text-xs tracking-wide uppercase"><span class="mr-1">🛡️</span> Segurança em 1º Lugar</span>
+                <span class="font-bold text-[11px] md:text-xs tracking-wide uppercase"><span class="mr-1">🌎</span> Atendimento PT, EN, ES</span>
+            </div>
+            <!-- Bloco 2 -->
+            <div class="flex items-center gap-8 px-4 shrink-0">
+                <span class="font-bold text-[11px] md:text-xs tracking-wide uppercase"><span class="mr-1">🏆</span> Guia Especialista Certificado</span>
+                <span class="font-bold text-[11px] md:text-xs tracking-wide uppercase"><span class="mr-1">⛰️</span> +100 Subidas na Gávea</span>
+                <span class="font-bold text-[11px] md:text-xs tracking-wide uppercase"><span class="mr-1">🛡️</span> Segurança em 1º Lugar</span>
+                <span class="font-bold text-[11px] md:text-xs tracking-wide uppercase"><span class="mr-1">🌎</span> Atendimento PT, EN, ES</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Navbar -->
+    <header class="fixed top-[36px] left-0 w-full z-40 bg-bg/90 backdrop-blur-md border-b border-border transition-all duration-300" id="navbar">
+        <div class="max-w-[1100px] mx-auto px-4 md:px-6 h-[70px] md:h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex flex-col items-start" aria-label="Home">
+                <span class="logo-brand font-bold text-xl md:text-2xl text-text leading-none tracking-wide">SCHIMIDT</span>
+                <span class="text-[8px] md:text-[10px] tracking-[0.3em] text-accent mt-1 leading-none font-medium">ADVENTURE</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-6">
+                <a href="#sobre" class="text-sm font-medium text-text-muted hover:text-accent transition-colors" data-i18n="nav_about">Sobre</a>
+                <a href="#pacotes" class="text-sm font-medium text-text-muted hover:text-accent transition-colors" data-i18n="nav_packages">Pacotes</a>
+                <a href="#depoimentos" class="text-sm font-medium text-text-muted hover:text-accent transition-colors" data-i18n="nav_testimonials">Depoimentos</a>
+                <a href="#faq" class="text-sm font-medium text-text-muted hover:text-accent transition-colors" data-i18n="nav_faq">FAQ</a>
+                <a href="#contato" class="text-sm font-medium text-text-muted hover:text-accent transition-colors" data-i18n="nav_contact">Contato</a>
+            </nav>
+
+            <!-- Actions (Lang Flags + CTA) -->
+            <div class="flex items-center gap-3 md:gap-5">
+                <!-- Lang Selector (Flags) -->
+                <div class="flex items-center gap-2">
+                    <button onclick="setLang('pt')" class="lang-flag active" data-lang="pt" aria-label="Português">🇧🇷</button>
+                    <button onclick="setLang('en')" class="lang-flag" data-lang="en" aria-label="English">🇺🇸</button>
+                    <button onclick="setLang('es')" class="lang-flag" data-lang="es" aria-label="Español">🇪🇸</button>
+                </div>
+                
+                <a href="https://wa.me/5521967752633" target="_blank" class="hidden md:inline-flex btn-primary shine-effect py-2 px-5 text-sm" data-i18n="nav_cta">Reservar</a>
+                
+                <!-- Mobile Hamburger -->
+                <button class="lg:hidden text-text p-1 ml-1" id="btn-menu" aria-label="Menu">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="fixed inset-y-0 right-0 w-[75vw] max-w-[300px] bg-surface z-50 transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col border-l border-border">
+        <div class="p-4 flex justify-end border-b border-border">
+            <button id="btn-close-menu" class="text-text p-2" aria-label="Close menu">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <div class="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
+            <a href="#sobre" class="text-lg text-text font-medium mobile-link" data-i18n="nav_about">Sobre</a>
+            <a href="#pacotes" class="text-lg text-text font-medium mobile-link" data-i18n="nav_packages">Pacotes</a>
+            <a href="#depoimentos" class="text-lg text-text font-medium mobile-link" data-i18n="nav_testimonials">Depoimentos</a>
+            <a href="#faq" class="text-lg text-text font-medium mobile-link" data-i18n="nav_faq">FAQ</a>
+            <a href="#contato" class="text-lg text-text font-medium mobile-link" data-i18n="nav_contact">Contato</a>
+        </div>
+        <div class="p-6 mt-auto">
+            <a href="https://wa.me/5521967752633" target="_blank" class="btn-primary shine-effect w-full" data-i18n="nav_cta">Reservar</a>
+        </div>
+    </div>
+    <!-- Drawer Overlay -->
+    <div id="drawer-overlay" class="fixed inset-0 bg-bg/80 backdrop-blur-sm z-40 hidden transition-opacity duration-300 opacity-0"></div>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/5521967752633" target="_blank" aria-label="Falar pelo WhatsApp" title="Falar com o guia" class="btn-floating-wa fixed bottom-[84px] right-4 md:right-6 z-[9999] w-[52px] h-[52px] rounded-full flex items-center justify-center transition-transform hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 0 5.384 0 12.03c0 2.124.553 4.195 1.603 6.012L.266 23.366l5.485-1.439a11.96 11.96 0 0 0 6.28 1.77h.004c6.645 0 12.029-5.384 12.029-12.03S18.676 0 12.031 0zm0 21.688a9.94 9.94 0 0 1-5.077-1.39l-.364-.216-3.774.99.997-3.682-.236-.376a9.927 9.927 0 0 1-1.516-5.352c0-5.495 4.474-9.97 9.972-9.97 2.663 0 5.166 1.037 7.049 2.922a9.926 9.926 0 0 1 2.921 7.048c-.001 5.495-4.475 9.97-9.972 9.97zm5.474-7.48c-.3-.15-1.774-.875-2.048-.975-.274-.1-.475-.15-.675.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-1.554-.775-2.73-1.488-3.784-3.238-.175-.3-.02-.462.13-.612.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5s.05-.375-.025-.525c-.075-.15-.675-1.625-.925-2.225-.24-.585-.487-.506-.675-.515-.175-.008-.375-.008-.575-.008a1.09 1.09 0 0 0-.795.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.115 3.225 5.12 4.525 2.164.935 2.87.8 3.945.675.92-.108 2.5-.95 2.85-1.875.35-.925.35-1.725.25-1.875-.1-.15-.375-.225-.675-.375z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/schimidt_adventure/" target="_blank" aria-label="Seguir no Instagram" title="Instagram" class="btn-floating-ig fixed bottom-[20px] right-4 md:right-6 z-[9999] w-[52px] h-[52px] rounded-full flex items-center justify-center transition-transform hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm5.838-10.535a1.44 1.44 0 10-2.88 0 1.44 1.44 0 002.88 0z"/></svg>
+    </a>
+
+    <!-- 3. Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center pt-[140px] lg:pt-[160px] pb-24 px-4 md:px-6 relative overflow-hidden text-center">
+        <!-- JS Particles Container -->
+        <div id="particles" class="absolute inset-0 z-0"></div>
+        
+        <div class="max-w-[720px] lg:max-w-[900px] relative z-10 reveal">
+            <!-- Text Shine Aplicado Aqui -->
+            <h1 class="h1-fluid font-bold text-shine drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] mb-6" data-i18n="hero_title">
+                Sua aventura na Pedra da Gávea começa aqui
+            </h1>
+            <p class="text-base md:text-lg lg:text-xl text-text-muted mb-10 max-w-[600px] mx-auto font-light leading-relaxed drop-shadow-md" data-i18n="hero_subtitle">
+                Trilha guiada com segurança, ritmo certo e acompanhamento profissional do início ao fim.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+                <a href="https://wa.me/5521967752633" target="_blank" class="btn-primary shine-effect w-full sm:w-auto text-[15px]" data-i18n="hero_btn_primary">
+                    Reservar agora
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a href="https://wa.me/5521967752633" target="_blank" class="btn-secondary w-full sm:w-auto text-[15px] bg-bg/50 backdrop-blur-sm" data-i18n="hero_btn_secondary">
+                    Falar com o guia
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                </a>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="flex flex-wrap items-center justify-center gap-3 md:gap-5 text-xs md:text-sm text-text-muted font-medium">
+                <div class="flex items-center gap-2 bg-surface-2/80 backdrop-blur rounded-full px-4 py-2 border border-border">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-accent-2"></i>
+                    <span data-i18n="badge_certified">Guia certificado</span>
+                </div>
+                <div class="flex items-center gap-2 bg-surface-2/80 backdrop-blur rounded-full px-4 py-2 border border-border">
+                    <i data-lucide="mountain-snow" class="w-4 h-4 text-accent-2"></i>
+                    <span data-i18n="badge_climbs">+100 subidas</span>
+                </div>
+                <div class="flex items-center gap-2 bg-surface-2/80 backdrop-blur rounded-full px-4 py-2 border border-border hidden sm:flex">
+                    <i data-lucide="heart-pulse" class="w-4 h-4 text-accent-2"></i>
+                    <span data-i18n="badge_safety">Segurança em 1º lugar</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="shape-divider-bottom z-0">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 4. Problem -> Solution Section (Flip Cards) -->
+    <section class="py-16 lg:py-24 px-4 md:px-6 bg-bg relative">
+        <div class="max-w-[480px] md:max-w-[720px] lg:max-w-[1100px] mx-auto">
+            <div class="text-center mb-10 lg:mb-14 reveal">
+                <h2 class="h2-fluid font-bold text-white mb-3" data-i18n="ps_title">Por que não ir sozinho?</h2>
+                <p class="text-text-muted text-sm md:text-base" data-i18n="ps_subtitle">A Pedra da Gávea é deslumbrante, mas exige respeito e preparo.</p>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+                <!-- Card 1 -->
+                <div class="perspective-1000 w-full group reveal" onclick="this.querySelector('.flip-inner').classList.toggle('rotate-y-180')">
+                    <div class="flip-inner relative w-full transition-transform duration-500 transform-style-3d min-h-[190px] lg:min-h-[220px]">
+                        <div class="flip-front absolute inset-0 backface-hidden bg-gradient-to-br from-[#2a0a0f] to-surface border border-red-900/50 p-4 lg:p-5 rounded-2xl flex flex-col justify-center cursor-pointer shadow-[0_4px_20px_rgba(220,38,38,0.1)] hover:border-red-500/50 transition-colors">
+                            <i data-lucide="alert-triangle" class="w-6 h-6 text-red-400 mb-3"></i>
+                            <h3 class="font-display text-[17px] lg:text-lg mb-2 text-white leading-tight" data-i18n="fc1_front_title">Medo de ir sozinho</h3>
+                            <p class="text-red-200/70 text-[12px] lg:text-[13px] leading-snug line-clamp-2" data-i18n="fc1_front_desc">Trilha difícil, sem conhecer o caminho, riscos reais.</p>
+                            <span class="absolute bottom-3 right-4 text-[10px] text-red-400/60 flex items-center gap-1" data-i18n="fc_tap_instruction">toque para solução <i data-lucide="arrow-right" class="w-2.5 h-2.5"></i></span>
+                        </div>
+                        <div class="flip-back absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-surface-2 to-[#0D1F2D] border border-accent p-4 lg:p-5 rounded-2xl flex flex-col justify-center items-center text-center cursor-pointer">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-accent mb-2"></i>
+                            <h3 class="font-display text-[16px] lg:text-[17px] mb-2 text-white leading-tight" data-i18n="fc1_back_title">Guia ao seu lado</h3>
+                            <p class="text-text-muted text-[11px] lg:text-[12px] mb-4 leading-tight" data-i18n="fc1_back_desc">Do encontro ao topo, você nunca fica sozinho. Segurança total.</p>
+                            <a href="https://wa.me/5521967752633" target="_blank" class="btn-primary text-[11px] py-1.5 px-3" data-i18n="fc_btn" onclick="event.stopPropagation()">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="perspective-1000 w-full group reveal" style="transition-delay: 100ms;" onclick="this.querySelector('.flip-inner').classList.toggle('rotate-y-180')">
+                    <div class="flip-inner relative w-full transition-transform duration-500 transform-style-3d min-h-[190px] lg:min-h-[220px]">
+                        <div class="flip-front absolute inset-0 backface-hidden bg-gradient-to-br from-[#2a0a0f] to-surface border border-red-900/50 p-4 lg:p-5 rounded-2xl flex flex-col justify-center cursor-pointer shadow-[0_4px_20px_rgba(220,38,38,0.1)] hover:border-red-500/50 transition-colors">
+                            <i data-lucide="languages" class="w-6 h-6 text-red-400 mb-3"></i>
+                            <h3 class="font-display text-[17px] lg:text-lg mb-2 text-white leading-tight" data-i18n="fc2_front_title">Barreira do idioma</h3>
+                            <p class="text-red-200/70 text-[12px] lg:text-[13px] leading-snug line-clamp-2" data-i18n="fc2_front_desc">Não fala português e não sabe se comunicar na trilha.</p>
+                            <span class="absolute bottom-3 right-4 text-[10px] text-red-400/60 flex items-center gap-1" data-i18n="fc_tap_instruction">toque para solução <i data-lucide="arrow-right" class="w-2.5 h-2.5"></i></span>
+                        </div>
+                        <div class="flip-back absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-surface-2 to-[#0D1F2D] border border-accent p-4 lg:p-5 rounded-2xl flex flex-col justify-center items-center text-center cursor-pointer">
+                            <i data-lucide="message-square" class="w-6 h-6 text-accent mb-2"></i>
+                            <h3 class="font-display text-[16px] lg:text-[17px] mb-2 text-white leading-tight" data-i18n="fc2_back_title">PT, EN e ES</h3>
+                            <p class="text-text-muted text-[11px] lg:text-[12px] mb-4 leading-tight" data-i18n="fc2_back_desc">Suporte completo no seu idioma durante a experiência.</p>
+                            <a href="https://wa.me/5521967752633" target="_blank" class="btn-primary text-[11px] py-1.5 px-3" data-i18n="fc_btn" onclick="event.stopPropagation()">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="perspective-1000 w-full group reveal" style="transition-delay: 200ms;" onclick="this.querySelector('.flip-inner').classList.toggle('rotate-y-180')">
+                    <div class="flip-inner relative w-full transition-transform duration-500 transform-style-3d min-h-[190px] lg:min-h-[220px]">
+                        <div class="flip-front absolute inset-0 backface-hidden bg-gradient-to-br from-[#2a0a0f] to-surface border border-red-900/50 p-4 lg:p-5 rounded-2xl flex flex-col justify-center cursor-pointer shadow-[0_4px_20px_rgba(220,38,38,0.1)] hover:border-red-500/50 transition-colors">
+                            <i data-lucide="backpack" class="w-6 h-6 text-red-400 mb-3"></i>
+                            <h3 class="font-display text-[17px] lg:text-lg mb-2 text-white leading-tight" data-i18n="fc3_front_title">Não sabe o que levar</h3>
+                            <p class="text-red-200/70 text-[12px] lg:text-[13px] leading-snug line-clamp-2" data-i18n="fc3_front_desc">Equipamento errado compromete a segurança.</p>
+                            <span class="absolute bottom-3 right-4 text-[10px] text-red-400/60 flex items-center gap-1" data-i18n="fc_tap_instruction">toque para solução <i data-lucide="arrow-right" class="w-2.5 h-2.5"></i></span>
+                        </div>
+                        <div class="flip-back absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-surface-2 to-[#0D1F2D] border border-accent p-4 lg:p-5 rounded-2xl flex flex-col justify-center items-center text-center cursor-pointer">
+                            <i data-lucide="clipboard-list" class="w-6 h-6 text-accent mb-2"></i>
+                            <h3 class="font-display text-[16px] lg:text-[17px] mb-2 text-white leading-tight" data-i18n="fc3_back_title">Orientação prévia</h3>
+                            <p class="text-text-muted text-[11px] lg:text-[12px] mb-4 leading-tight" data-i18n="fc3_back_desc">Lista do que levar, dicas de roupa e hidratação antes da saída.</p>
+                            <a href="https://wa.me/5521967752633" target="_blank" class="btn-primary text-[11px] py-1.5 px-3" data-i18n="fc_btn" onclick="event.stopPropagation()">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="perspective-1000 w-full group reveal" style="transition-delay: 300ms;" onclick="this.querySelector('.flip-inner').classList.toggle('rotate-y-180')">
+                    <div class="flip-inner relative w-full transition-transform duration-500 transform-style-3d min-h-[190px] lg:min-h-[220px]">
+                        <div class="flip-front absolute inset-0 backface-hidden bg-gradient-to-br from-[#2a0a0f] to-surface border border-red-900/50 p-4 lg:p-5 rounded-2xl flex flex-col justify-center cursor-pointer shadow-[0_4px_20px_rgba(220,38,38,0.1)] hover:border-red-500/50 transition-colors">
+                            <i data-lucide="activity" class="w-6 h-6 text-red-400 mb-3"></i>
+                            <h3 class="font-display text-[17px] lg:text-lg mb-2 text-white leading-tight" data-i18n="fc4_front_title">Preparo físico</h3>
+                            <p class="text-red-200/70 text-[12px] lg:text-[13px] leading-snug line-clamp-2" data-i18n="fc4_front_desc">Trilha exigente, sem saber se a forma é suficiente.</p>
+                            <span class="absolute bottom-3 right-4 text-[10px] text-red-400/60 flex items-center gap-1" data-i18n="fc_tap_instruction">toque para solução <i data-lucide="arrow-right" class="w-2.5 h-2.5"></i></span>
+                        </div>
+                        <div class="flip-back absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-surface-2 to-[#0D1F2D] border border-accent p-4 lg:p-5 rounded-2xl flex flex-col justify-center items-center text-center cursor-pointer">
+                            <i data-lucide="compass" class="w-6 h-6 text-accent mb-2"></i>
+                            <h3 class="font-display text-[16px] lg:text-[17px] mb-2 text-white leading-tight" data-i18n="fc4_back_title">Ritmo adaptado</h3>
+                            <p class="text-text-muted text-[11px] lg:text-[12px] mb-4 leading-tight" data-i18n="fc4_back_desc">O guia ajusta o pace. Ninguém fica pra trás. Pausas estratégicas.</p>
+                            <a href="https://wa.me/5521967752633" target="_blank" class="btn-primary text-[11px] py-1.5 px-3" data-i18n="fc_btn" onclick="event.stopPropagation()">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="shape-divider-bottom z-0">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.23,28.7,149.96,50.11,227.1,54.71c31.33,1.87,62.77,2.2,94.29,1.73Z" class="shape-fill-surface"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 5. Quem Somos (Sobre) -->
+    <section id="sobre" class="py-16 lg:py-24 px-4 md:px-6 bg-surface bg-texture relative">
+        <div class="max-w-[480px] md:max-w-[720px] lg:max-w-[1100px] mx-auto flex flex-col md:flex-row items-center gap-8 lg:gap-16 relative z-10">
+            <div class="w-full md:w-2/5 flex justify-center reveal">
+                <div class="w-[220px] h-[220px] lg:w-[320px] lg:h-[320px] rounded-full bg-gradient-to-br from-accent to-surface-2 border-4 border-surface shadow-[0_0_40px_rgba(45,212,191,0.15)] flex items-center justify-center relative overflow-hidden">
+                    <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1776696448/Captura_de_tela_2026-04-20_114647_bhbcio.png" alt="Guia SCHIMIDT Especialista" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <div class="w-full md:w-3/5 reveal text-center md:text-left flex flex-col">
+                <h2 class="font-display font-bold text-accent-2 mb-2 tracking-widest text-xs uppercase" data-i18n="about_label">Seu Guia</h2>
+                <h3 class="h2-fluid font-bold text-white mb-4 lg:mb-6 leading-tight" data-i18n="about_title">Alan Schimidt</h3>
+                
+                <p class="text-text-muted text-[15px] lg:text-base mb-8 leading-relaxed" data-i18n="about_p">
+                    Sou o fundador da SCHIMIDT ADVENTURE. Com atendimento humano, fluência em 3 idiomas e profundo respeito à montanha, garanto que sua experiência na trilha mais icônica do Rio seja segura, no seu ritmo e absolutamente inesquecível.
+                </p>
+
+                <!-- Stats com Contador usando Fonte Space Grotesk (.font-numbers) -->
+                <div class="grid grid-cols-3 gap-2 border-y border-border py-6 mb-8" id="stats-container">
+                    <div class="text-center">
+                        <span class="block text-3xl lg:text-4xl font-numbers font-bold text-accent mb-1"><span class="count-up" data-val="5">0</span>+</span>
+                        <span class="text-[10px] md:text-xs text-text-muted uppercase tracking-wider font-medium" data-i18n="stat_years">Anos de guia</span>
+                    </div>
+                    <div class="text-center border-l border-border">
+                        <span class="block text-3xl lg:text-4xl font-numbers font-bold text-accent mb-1"><span class="count-up" data-val="100">0</span>+</span>
+                        <span class="text-[10px] md:text-xs text-text-muted uppercase tracking-wider font-medium" data-i18n="stat_climbs">Subidas na Gávea</span>
+                    </div>
+                    <div class="text-center border-l border-border">
+                        <span class="block text-3xl lg:text-4xl font-numbers font-bold text-accent mb-1"><span class="count-up" data-val="3">0</span></span>
+                        <span class="text-[10px] md:text-xs text-text-muted uppercase tracking-wider font-medium" data-i18n="stat_langs">Idiomas</span>
+                    </div>
+                </div>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+                    <a href="https://wa.me/5521967752633" target="_blank" class="btn-primary shine-effect w-full sm:w-auto text-[14px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 0 5.384 0 12.03c0 2.124.553 4.195 1.603 6.012L.266 23.366l5.485-1.439a11.96 11.96 0 0 0 6.28 1.77h.004c6.645 0 12.029-5.384 12.029-12.03S18.676 0 12.031 0zm0 21.688a9.94 9.94 0 0 1-5.077-1.39l-.364-.216-3.774.99.997-3.682-.236-.376a9.927 9.927 0 0 1-1.516-5.352c0-5.495 4.474-9.97 9.972-9.97 2.663 0 5.166 1.037 7.049 2.922a9.926 9.926 0 0 1 2.921 7.048c-.001 5.495-4.475 9.97-9.972 9.97zm5.474-7.48c-.3-.15-1.774-.875-2.048-.975-.274-.1-.475-.15-.675.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-1.554-.775-2.73-1.488-3.784-3.238-.175-.3-.02-.462.13-.612.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5s.05-.375-.025-.525c-.075-.15-.675-1.625-.925-2.225-.24-.585-.487-.506-.675-.515-.175-.008-.375-.008-.575-.008a1.09 1.09 0 0 0-.795.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.115 3.225 5.12 4.525 2.164.935 2.87.8 3.945.675.92-.108 2.5-.95 2.85-1.875.35-.925.35-1.725.25-1.875-.1-.15-.375-.225-.675-.375z"/></svg>
+                        <span data-i18n="about_cta1">Falar no WhatsApp</span>
+                    </a>
+                    <a href="https://www.instagram.com/schimidt_adventure/" target="_blank" class="btn-secondary w-full sm:w-auto text-[14px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm5.838-10.535a1.44 1.44 0 10-2.88 0 1.44 1.44 0 002.88 0z"/></svg>
+                        <span data-i18n="about_cta2">Seguir no Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Quiz de Qualificação (Com Botão de Voltar) -->
+    <section class="py-16 lg:py-24 px-4 md:px-6 bg-bg relative">
+        <div class="max-w-[480px] md:max-w-[650px] mx-auto reveal">
+            <div class="text-center mb-8 lg:mb-10">
+                <h2 class="h2-fluid font-bold text-white mb-3" data-i18n="quiz_title">Agilize seu agendamento</h2>
+                <p class="text-text-muted text-sm md:text-base" data-i18n="quiz_subtitle">Responda a 5 perguntas rápidas para personalizarmos sua aventura.</p>
+            </div>
+
+            <div class="bg-surface border border-border rounded-2xl p-5 md:p-10 shadow-2xl relative overflow-hidden">
+                <!-- Progress Bar -->
+                <div class="absolute top-0 left-0 w-full h-1 bg-surface-2">
+                    <div id="quiz-progress" class="h-full bg-accent-2 transition-all duration-300" style="width: 20%;"></div>
+                </div>
+
+                <!-- Questions (JS toggled) -->
+                <div id="quiz-q1" class="quiz-step block">
+                    <span class="text-xs font-bold text-accent-2 mb-2 block uppercase tracking-wider" data-i18n="q_step">Passo 1 de 5</span>
+                    <h3 class="font-display text-lg md:text-xl text-white mb-6" data-i18n="q1_text">Quantas pessoas vão fazer a trilha com você?</h3>
+                    <div class="flex flex-col gap-3">
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(1, this.innerText)" data-i18n="q1_o1">👤 Só eu</button>
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(1, this.innerText)" data-i18n="q1_o2">👥 2 pessoas</button>
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(1, this.innerText)" data-i18n="q1_o3">👨‍👩‍👦 3 a 5 pessoas</button>
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(1, this.innerText)" data-i18n="q1_o4">🙌 6 ou mais</button>
+                    </div>
+                </div>
+
+                <div id="quiz-q2" class="quiz-step hidden">
+                    <span class="text-xs font-bold text-accent-2 mb-2 block uppercase tracking-wider" data-i18n="q_step">Passo 2 de 5</span>
+                    <h3 class="font-display text-lg md:text-xl text-white mb-6" data-i18n="q2_text">Qual é o seu nível de condicionamento físico?</h3>
+                    <div class="flex flex-col gap-3">
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(2, this.innerText)" data-i18n="q2_o1">🚶 Iniciante</button>
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(2, this.innerText)" data-i18n="q2_o2">🏃 Moderado</button>
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(2, this.innerText)" data-i18n="q2_o3">💪 Tenho boa forma</button>
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(2, this.innerText)" data-i18n="q2_o4">⚡ Atleta</button>
+                    </div>
+                    <div class="mt-5 flex justify-start">
+                        <button class="text-text-muted hover:text-white text-sm flex items-center gap-1 transition-colors" onclick="prevQuiz(2)">
+                            <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="quiz_back">Voltar</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="quiz-q3" class="quiz-step hidden">
+                    <span class="text-xs font-bold text-accent-2 mb-2 block uppercase tracking-wider" data-i18n="q_step">Passo 3 de 5</span>
+                    <h3 class="font-display text-lg md:text-xl text-white mb-6" data-i18n="q3_text">Quando você quer fazer a trilha?</h3>
+                    <div class="flex flex-col gap-3">
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(3, this.innerText)" data-i18n="q3_o1">📆 Esta semana</button>
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(3, this.innerText)" data-i18n="q3_o2">📅 Próximas 2 semanas</button>
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(3, this.innerText)" data-i18n="q3_o3">🗓️ Este mês</button>
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(3, this.innerText)" data-i18n="q3_o4">🤔 Ainda planejando</button>
+                    </div>
+                    <div class="mt-5 flex justify-start">
+                        <button class="text-text-muted hover:text-white text-sm flex items-center gap-1 transition-colors" onclick="prevQuiz(3)">
+                            <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="quiz_back">Voltar</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="quiz-q4" class="quiz-step hidden">
+                    <span class="text-xs font-bold text-accent-2 mb-2 block uppercase tracking-wider" data-i18n="q_step">Passo 4 de 5</span>
+                    <h3 class="font-display text-lg md:text-xl text-white mb-6" data-i18n="q4_text">Qual horário prefere?</h3>
+                    <div class="flex flex-col gap-3">
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(4, this.innerText)" data-i18n="q4_o1">🌄 Manhã cedo (5h-7h)</button>
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(4, this.innerText)" data-i18n="q4_o2">☀️ Manhã (7h-9h)</button>
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(4, this.innerText)" data-i18n="q4_o3">🌤️ Tarde</button>
+                    </div>
+                    <div class="mt-5 flex justify-start">
+                        <button class="text-text-muted hover:text-white text-sm flex items-center gap-1 transition-colors" onclick="prevQuiz(4)">
+                            <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="quiz_back">Voltar</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="quiz-q5" class="quiz-step hidden">
+                    <span class="text-xs font-bold text-accent-2 mb-2 block uppercase tracking-wider" data-i18n="q_step">Passo 5 de 5</span>
+                    <h3 class="font-display text-lg md:text-xl text-white mb-6" data-i18n="q5_text">Você quer suporte completo do guia durante toda a trilha?</h3>
+                    <div class="flex flex-col gap-3">
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(5, this.innerText)" data-i18n="q5_o1">🛡️ Sim, quero total segurança</button>
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(5, this.innerText)" data-i18n="q5_o2">🧭 Quero orientação básica</button>
+                        <button class="quiz-btn border border-border hover:border-accent-2 hover:bg-accent-2/10 rounded-xl p-4 text-left transition-all text-sm font-medium text-text" onclick="answerQuiz(5, this.innerText)" data-i18n="q5_o3">❓ Tenho dúvidas</button>
+                    </div>
+                    <div class="mt-5 flex justify-start">
+                        <button class="text-text-muted hover:text-white text-sm flex items-center gap-1 transition-colors" onclick="prevQuiz(5)">
+                            <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="quiz_back">Voltar</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Result -->
+                <div id="quiz-result" class="quiz-step hidden text-center">
+                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-5">
+                        <i data-lucide="check" class="w-8 h-8 text-accent"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-display font-bold text-white mb-3" data-i18n="qr_title">Perfeito! Sua trilha está pronta para ser agendada.</h3>
+                    <p class="text-text-muted text-[13px] md:text-sm mb-2" id="quiz-summary-text">Resumo: </p>
+                    <p class="text-accent-2 font-medium text-sm md:text-base mb-8" data-i18n="qr_desc">Prepararemos a melhor experiência para você. Envie os dados para confirmar a disponibilidade!</p>
+                    
+                    <a href="#" id="quiz-final-btn" target="_blank" class="btn-primary shine-effect w-full shadow-lg shadow-accent/20 text-[14px] md:text-base" data-i18n="qr_btn">
+                        Falar com o guia agora
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="shape-divider-bottom z-0">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.15,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill-surface"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill-surface"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill-surface"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 8. Pacotes (Carrossel Arrastável) -->
+    <section id="pacotes" class="py-16 lg:py-24 bg-surface bg-texture relative border-b border-border overflow-hidden">
+        <div class="max-w-[1100px] mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-10 lg:mb-14 reveal">
+                <h2 class="h2-fluid font-bold text-white mb-3" data-i18n="pkg_title">Planos e Investimento</h2>
+                <p class="text-text-muted text-sm md:text-base mb-2" data-i18n="pkg_subtitle">Escolha o pacote que melhor se adapta à sua necessidade.</p>
+                <div class="flex items-center justify-center gap-2 text-[11px] text-text-muted/50 uppercase tracking-widest lg:hidden mt-4">
+                    <i data-lucide="move-horizontal" class="w-3 h-3"></i> <span data-i18n="pkg_swipe">deslize para ver as opções</span> <i data-lucide="move-horizontal" class="w-3 h-3"></i>
+                </div>
+            </div>
+
+            <!-- Carousel Arrastável -->
+            <div id="pricing-slider" class="pricing-slider flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 px-4 md:px-0 -mx-4 md:mx-auto gap-4 md:gap-6 cursor-grab active:cursor-grabbing items-stretch">
+                
+                <!-- Pacote 1: Prata -->
+                <div class="bg-surface border-2 border-slate-400/50 rounded-3xl p-6 lg:p-8 hover:border-slate-300 transition-colors reveal shadow-lg flex flex-col h-auto shrink-0 w-[85vw] max-w-[320px] md:w-[320px] snap-center relative select-none">
+                    <div class="w-10 h-10 rounded-full bg-slate-400/10 flex items-center justify-center mb-4">
+                        <i data-lucide="shield" class="w-5 h-5 text-slate-300"></i>
+                    </div>
+                    <h3 class="font-display text-xl lg:text-2xl font-bold text-white mb-2" data-i18n="p1_name">Plano Prata</h3>
+                    <p class="text-[13px] lg:text-sm text-slate-400 mb-6 min-h-[40px]" data-i18n="p1_target">Para quem quer o básico com segurança.</p>
+                    <div class="font-display text-3xl font-numbers font-bold text-white mb-6 border-b border-slate-700/50 pb-6 pointer-events-none">
+                        R$ --- <span class="text-sm font-body text-slate-500 font-normal" data-i18n="pkg_per_person">/pessoa</span>
+                    </div>
+                    <ul class="flex flex-col gap-3 lg:gap-4 mb-8 flex-1 pointer-events-none">
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted">
+                            <i data-lucide="check" class="w-5 h-5 text-slate-400 shrink-0"></i> <span data-i18n="p1_f1">Guiamento profissional ida e volta</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted">
+                            <i data-lucide="check" class="w-5 h-5 text-slate-400 shrink-0"></i> <span data-i18n="p1_f2">Instrução na Carrasqueira</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted">
+                            <i data-lucide="check" class="w-5 h-5 text-slate-400 shrink-0"></i> <span data-i18n="p1_f3">Briefing de segurança</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted/40 line-through">
+                            <i data-lucide="x" class="w-5 h-5 text-slate-600 shrink-0"></i> <span data-i18n="p1_f4">Suporte fotográfico focado</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5521967752633?text=Olá, quero saber mais sobre o Plano Prata." target="_blank" class="w-full text-[14px] mt-auto py-3 px-6 rounded-full border border-slate-400 text-slate-300 hover:bg-slate-400 hover:text-[#0A0F14] transition-colors text-center font-semibold" data-i18n="pkg_btn">Agendar este</a>
+                </div>
+
+                <!-- Pacote 2: Ouro (Corrigido para usar Tag Interna e sem Margem Negativa) -->
+                <div class="bg-[#1A1814] border-2 border-amber-400 rounded-3xl p-6 lg:p-8 hover:border-amber-300 transition-colors shadow-[0_0_25px_rgba(251,191,36,0.15)] reveal z-10 flex flex-col h-auto shrink-0 w-[85vw] max-w-[320px] md:w-[320px] snap-center relative select-none">
+                    <!-- Topo Alinhado Corretamente para o Carrossel -->
+                    <div class="flex flex-col justify-start mb-4">
+                        <div class="bg-amber-400 text-[#0A0F14] px-3 py-1 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wide inline-flex self-start mb-3 shadow-md" data-i18n="p2_tag">Mais Recomendado</div>
+                        <div class="w-10 h-10 rounded-full bg-amber-400/10 flex items-center justify-center">
+                            <i data-lucide="award" class="w-5 h-5 text-amber-400"></i>
+                        </div>
+                    </div>
+                    
+                    <h3 class="font-display text-xl lg:text-2xl font-bold text-white mb-2" data-i18n="p2_name">Plano Ouro</h3>
+                    <p class="text-[13px] lg:text-sm text-amber-200/70 mb-6 min-h-[40px]" data-i18n="p2_target">Suporte total, paradas estratégicas e fotos.</p>
+                    <div class="font-display text-3xl font-numbers font-bold text-white mb-6 border-b border-amber-500/20 pb-6 pointer-events-none">
+                        R$ --- <span class="text-sm font-body text-amber-200/50 font-normal" data-i18n="pkg_per_person">/pessoa</span>
+                    </div>
+                    <ul class="flex flex-col gap-3 lg:gap-4 mb-8 flex-1 pointer-events-none">
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted">
+                            <i data-lucide="check" class="w-5 h-5 text-amber-400 shrink-0"></i> <span data-i18n="p2_f1">Tudo do pacote Prata</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted">
+                            <i data-lucide="check" class="w-5 h-5 text-amber-400 shrink-0"></i> <span data-i18n="p2_f2">Ritmo personalizado com pausas</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted">
+                            <i data-lucide="check" class="w-5 h-5 text-amber-400 shrink-0"></i> <span data-i18n="p2_f3">Suporte psicológico nos trechos difíceis</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted">
+                            <i data-lucide="check" class="w-5 h-5 text-amber-400 shrink-0"></i> <span data-i18n="p2_f4">Ajuda com fotos nos melhores ângulos</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5521967752633?text=Olá, quero agendar o Plano Ouro." target="_blank" class="shine-effect w-full text-[14px] mt-auto py-3 px-6 rounded-full bg-amber-400 text-[#0A0F14] hover:bg-amber-300 shadow-lg shadow-amber-400/20 transition-colors text-center font-semibold" data-i18n="pkg_btn">Agendar este</a>
+                </div>
+
+                <!-- Pacote 3: Diamante -->
+                <div class="bg-surface border-2 border-cyan-500/30 rounded-3xl p-6 lg:p-8 hover:border-cyan-400/80 transition-colors reveal shadow-lg flex flex-col h-auto shrink-0 w-[85vw] max-w-[320px] md:w-[320px] snap-center relative select-none">
+                    <div class="w-10 h-10 rounded-full bg-cyan-500/10 flex items-center justify-center mb-4 mt-[36px]">
+                        <i data-lucide="gem" class="w-5 h-5 text-cyan-400"></i>
+                    </div>
+                    <h3 class="font-display text-xl lg:text-2xl font-bold text-white mb-2" data-i18n="p3_name">Plano Diamante</h3>
+                    <p class="text-[13px] lg:text-sm text-cyan-200/70 mb-6 min-h-[40px]" data-i18n="p3_target">VIP, flexibilidade total e exclusividade.</p>
+                    <div class="font-display text-3xl font-numbers font-bold text-white mb-6 border-b border-cyan-900/50 pb-6 pointer-events-none">
+                        R$ --- <span class="text-sm font-body text-cyan-500/70 font-normal" data-i18n="pkg_per_person">/pessoa</span>
+                    </div>
+                    <ul class="flex flex-col gap-3 lg:gap-4 mb-8 flex-1 pointer-events-none">
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted">
+                            <i data-lucide="check" class="w-5 h-5 text-cyan-400 shrink-0"></i> <span data-i18n="p3_f1">Horário de saída flexível</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted">
+                            <i data-lucide="check" class="w-5 h-5 text-cyan-400 shrink-0"></i> <span data-i18n="p3_f2">Grupo privativo (só você e acompanhantes)</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted">
+                            <i data-lucide="check" class="w-5 h-5 text-cyan-400 shrink-0"></i> <span data-i18n="p3_f3">Prioridade nos picos de fotos e vídeos</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted">
+                            <i data-lucide="check" class="w-5 h-5 text-cyan-400 shrink-0"></i> <span data-i18n="p3_f4">Apoio logístico especial</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5521967752633?text=Olá, gostaria de saber mais sobre o Plano Diamante VIP." target="_blank" class="w-full text-[14px] mt-auto py-3 px-6 rounded-full border border-cyan-400 text-cyan-300 hover:bg-cyan-400 hover:text-[#0A0F14] transition-colors text-center font-semibold" data-i18n="pkg_btn">Agendar VIP</a>
+                </div>
+
+                <!-- Pacote 4: CabanaCopa Hostel -->
+                <div class="bg-bg border-2 border-accent/40 rounded-3xl p-6 lg:p-8 hover:border-accent transition-colors reveal shadow-lg flex flex-col h-auto shrink-0 w-[85vw] max-w-[320px] md:w-[320px] snap-center relative select-none">
+                    <div class="flex items-center gap-2 mb-4 mt-[36px]">
+                        <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                            <i data-lucide="building" class="w-5 h-5 text-accent"></i>
+                        </div>
+                    </div>
+                    <h3 class="font-display text-xl lg:text-2xl font-bold text-white mb-2" data-i18n="p4_name">CabanaCopa Hostel</h3>
+                    <p class="text-[13px] lg:text-sm text-text-muted mb-6 min-h-[40px]" data-i18n="p4_target">Tarifa especial exclusiva para hóspedes.</p>
+                    <div class="font-display text-2xl lg:text-3xl font-bold text-white mb-6 border-b border-border pb-6 flex items-center h-[36px] lg:h-[40px] pointer-events-none">
+                        <span class="text-accent shine-effect px-2" data-i18n="pkg_special">Preço Especial</span>
+                    </div>
+                    <ul class="flex flex-col gap-3 lg:gap-4 mb-8 flex-1 pointer-events-none">
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted">
+                            <i data-lucide="check" class="w-5 h-5 text-accent shrink-0"></i> <span data-i18n="p4_f1">Desconto VIP na trilha completa</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted">
+                            <i data-lucide="check" class="w-5 h-5 text-accent shrink-0"></i> <span data-i18n="p4_f2">Integração com a galera do hostel</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted">
+                            <i data-lucide="check" class="w-5 h-5 text-accent shrink-0"></i> <span data-i18n="p4_f3">Atenção focada e fotos incríveis</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-[13px] lg:text-sm text-text-muted">
+                            <i data-lucide="check" class="w-5 h-5 text-accent shrink-0"></i> <span data-i18n="p4_f4">Organização logística facilitada</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5521967752633?text=Olá, sou hóspede do CabanaCopa Hostel e quero agendar a trilha com desconto!" target="_blank" class="w-full text-[14px] mt-auto py-3 px-6 rounded-full border border-accent text-accent hover:bg-accent hover:text-[#0A0F14] transition-colors text-center font-semibold" data-i18n="pkg_btn_hostel">Garantir Desconto</a>
+                </div>
+
+            </div>
+            
+            <!-- Controles do Slider -->
+            <div class="flex items-center justify-center gap-3 mt-6">
+                <button id="slider-prev" class="w-10 h-10 rounded-full border border-border flex items-center justify-center text-text-muted hover:text-accent hover:border-accent transition-colors" aria-label="Voltar">
+                    <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                </button>
+                <button id="slider-next" class="w-10 h-10 rounded-full border border-border flex items-center justify-center text-text-muted hover:text-accent hover:border-accent transition-colors" aria-label="Avançar">
+                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="shape-divider-bottom z-0">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 9. Depoimentos -->
+    <section id="depoimentos" class="py-16 lg:py-24 bg-bg relative overflow-hidden">
+        <div class="max-w-[1100px] mx-auto text-center reveal mb-10 lg:mb-14 px-4 md:px-6">
+            <h2 class="h2-fluid font-bold text-white" data-i18n="test_title">O que dizem os aventureiros</h2>
+        </div>
+        
+        <div class="w-[200%] md:w-[150%] lg:w-[120%] ml-[-50%] md:ml-[-25%] lg:ml-[-10%] flex overflow-hidden group">
+            <div class="flex animate-marquee-slow group-hover:pause gap-4 lg:gap-6 px-2 lg:px-3">
+                <!-- Cards Omitidos (Idênticos ao original para o Loop de Marquee) -->
+                <div class="bg-surface border border-border p-6 rounded-2xl w-[280px] lg:w-[350px] shrink-0 text-left">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex gap-1 text-[#FBBC05]"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                        <svg class="w-5 h-5 opacity-80" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                    </div>
+                    <p class="text-[13px] lg:text-[14px] text-text-muted mb-6 leading-relaxed line-clamp-4" data-i18n="t1_text">"Achei que não conseguiria passar pela Carrasqueira, mas a paciência e a instrução do guia foram fundamentais. Me senti segura o tempo todo!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-accent text-bg flex items-center justify-center font-bold text-xs">M</div>
+                        <div>
+                            <h4 class="font-bold text-white text-[13px]" data-i18n="t1_name">Mariana S.</h4>
+                            <p class="text-[10px] text-text-muted" data-i18n="t1_loc">São Paulo, BR</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-surface border border-border p-6 rounded-2xl w-[280px] lg:w-[350px] shrink-0 text-left">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex gap-1 text-[#FBBC05]"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                        <svg class="w-5 h-5 opacity-80" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                    </div>
+                    <p class="text-[13px] lg:text-[14px] text-text-muted mb-6 leading-relaxed line-clamp-4" data-i18n="t2_text">"Best guide ever! Flawless english and incredible knowledge of the mountain. Made a hard hike feel completely organized and safe."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-accent-2 text-white flex items-center justify-center font-bold text-xs">J</div>
+                        <div>
+                            <h4 class="font-bold text-white text-[13px]" data-i18n="t2_name">John D.</h4>
+                            <p class="text-[10px] text-text-muted" data-i18n="t2_loc">California, USA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-surface border border-border p-6 rounded-2xl w-[280px] lg:w-[350px] shrink-0 text-left">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex gap-1 text-[#FBBC05]"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                        <svg class="w-5 h-5 opacity-80" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                    </div>
+                    <p class="text-[13px] lg:text-[14px] text-text-muted mb-6 leading-relaxed line-clamp-4" data-i18n="t3_text">"Excelente experiencia. El guía nos dio mucha confianza, el ritmo fue perfecto y las fotos en la cima quedaron incríveis."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-[#EA4335] text-white flex items-center justify-center font-bold text-xs">C</div>
+                        <div>
+                            <h4 class="font-bold text-white text-[13px]" data-i18n="t3_name">Carlos M.</h4>
+                            <p class="text-[10px] text-text-muted" data-i18n="t3_loc">Buenos Aires, AR</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-surface border border-border p-6 rounded-2xl w-[280px] lg:w-[350px] shrink-0 text-left">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex gap-1 text-[#FBBC05]"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                        <svg class="w-5 h-5 opacity-80" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                    </div>
+                    <p class="text-[13px] lg:text-[14px] text-text-muted mb-6 leading-relaxed line-clamp-4" data-i18n="t4_text">"Já fiz outras trilhas, mas a organização e o profissionalismo aqui são diferenciados. Dá pra ver que ele realmente se importa com o bem-estar do grupo."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-[#34A853] text-white flex items-center justify-center font-bold text-xs">R</div>
+                        <div>
+                            <h4 class="font-bold text-white text-[13px]" data-i18n="t4_name">Rafael T.</h4>
+                            <p class="text-[10px] text-text-muted" data-i18n="t4_loc">Rio de Janeiro, BR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Clone for infinite scroll -->
+            <div class="flex animate-marquee-slow group-hover:pause gap-4 lg:gap-6 px-2 lg:px-3">
+                <div class="bg-surface border border-border p-6 rounded-2xl w-[280px] lg:w-[350px] shrink-0 text-left">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex gap-1 text-[#FBBC05]"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                        <svg class="w-5 h-5 opacity-80" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                    </div>
+                    <p class="text-[13px] lg:text-[14px] text-text-muted mb-6 leading-relaxed line-clamp-4" data-i18n="t1_text">"Achei que não conseguiria passar pela Carrasqueira, mas a paciência e a instrução do guia foram fundamentais. Me senti segura o tempo todo!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-accent text-bg flex items-center justify-center font-bold text-xs">M</div>
+                        <div>
+                            <h4 class="font-bold text-white text-[13px]" data-i18n="t1_name">Mariana S.</h4>
+                            <p class="text-[10px] text-text-muted" data-i18n="t1_loc">São Paulo, BR</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-surface border border-border p-6 rounded-2xl w-[280px] lg:w-[350px] shrink-0 text-left">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex gap-1 text-[#FBBC05]"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                        <svg class="w-5 h-5 opacity-80" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                    </div>
+                    <p class="text-[13px] lg:text-[14px] text-text-muted mb-6 leading-relaxed line-clamp-4" data-i18n="t2_text">"Best guide ever! Flawless english and incredible knowledge of the mountain. Made a hard hike feel completely organized and safe."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-accent-2 text-white flex items-center justify-center font-bold text-xs">J</div>
+                        <div>
+                            <h4 class="font-bold text-white text-[13px]" data-i18n="t2_name">John D.</h4>
+                            <p class="text-[10px] text-text-muted" data-i18n="t2_loc">California, USA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-surface border border-border p-6 rounded-2xl w-[280px] lg:w-[350px] shrink-0 text-left">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex gap-1 text-[#FBBC05]"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                        <svg class="w-5 h-5 opacity-80" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                    </div>
+                    <p class="text-[13px] lg:text-[14px] text-text-muted mb-6 leading-relaxed line-clamp-4" data-i18n="t3_text">"Excelente experiencia. El guía nos dio mucha confianza, el ritmo fue perfecto y las fotos en la cima quedaron incríveis."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-[#EA4335] text-white flex items-center justify-center font-bold text-xs">C</div>
+                        <div>
+                            <h4 class="font-bold text-white text-[13px]" data-i18n="t3_name">Carlos M.</h4>
+                            <p class="text-[10px] text-text-muted" data-i18n="t3_loc">Buenos Aires, AR</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-surface border border-border p-6 rounded-2xl w-[280px] lg:w-[350px] shrink-0 text-left">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex gap-1 text-[#FBBC05]"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                        <svg class="w-5 h-5 opacity-80" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                    </div>
+                    <p class="text-[13px] lg:text-[14px] text-text-muted mb-6 leading-relaxed line-clamp-4" data-i18n="t4_text">"Já fiz outras trilhas, mas a organização e o profissionalismo aqui são diferenciados. Dá pra ver que ele realmente se importa com o bem-estar do grupo."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-[#34A853] text-white flex items-center justify-center font-bold text-xs">R</div>
+                        <div>
+                            <h4 class="font-bold text-white text-[13px]" data-i18n="t4_name">Rafael T.</h4>
+                            <p class="text-[10px] text-text-muted" data-i18n="t4_loc">Rio de Janeiro, BR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FAQ -->
+    <section id="faq" class="py-16 lg:py-24 px-4 md:px-6 bg-surface bg-texture relative border-t border-border">
+        <div class="max-w-[480px] md:max-w-[720px] mx-auto reveal relative z-10">
+            <div class="text-center mb-10 lg:mb-14">
+                <h2 class="h2-fluid font-bold text-white mb-3" data-i18n="faq_title">Dúvidas Frequentes</h2>
+                <p class="text-text-muted text-sm md:text-base" data-i18n="faq_subtitle">Tudo o que você precisa saber antes de subir.</p>
+            </div>
+
+            <div class="flex flex-col gap-3 lg:gap-4">
+                <div class="bg-bg border border-border rounded-xl overflow-hidden">
+                    <button class="w-full text-left p-4 md:p-5 font-semibold flex justify-between items-center focus:outline-none text-[14px] md:text-base text-white" onclick="toggleFaq(this)">
+                        <span data-i18n="f1_q">Preciso de equipamento de escalada?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-accent-2 shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-4 md:p-5 pt-0 text-text-muted text-[13px] md:text-[14px] leading-relaxed" data-i18n="f1_a">Não. A subida pela Carrasqueira é feita em estilo "escalaminhada". Eu oriento exatamente onde colocar mãos e pés, garantindo sua segurança técnica e emocional sem precisar de cordas para subir.</p>
+                    </div>
+                </div>
+                <div class="bg-bg border border-border rounded-xl overflow-hidden">
+                    <button class="w-full text-left p-4 md:p-5 font-semibold flex justify-between items-center focus:outline-none text-[14px] md:text-base text-white" onclick="toggleFaq(this)">
+                        <span data-i18n="f2_q">Qualquer pessoa pode fazer a trilha?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-accent-2 shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-4 md:p-5 pt-0 text-text-muted text-[13px] md:text-[14px] leading-relaxed" data-i18n="f2_a">A trilha é considerada pesada. Requer um bom condicionamento físico prévio e ausência de problemas cardíacos ou ortopédicos graves. Nós adaptamos o ritmo, mas o esforço físico é real.</p>
+                    </div>
+                </div>
+                <div class="bg-bg border border-border rounded-xl overflow-hidden">
+                    <button class="w-full text-left p-4 md:p-5 font-semibold flex justify-between items-center focus:outline-none text-[14px] md:text-base text-white" onclick="toggleFaq(this)">
+                        <span data-i18n="f3_q">O que devo levar na mochila?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-accent-2 shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-4 md:p-5 pt-0 text-text-muted text-[13px] md:text-[14px] leading-relaxed" data-i18n="f3_a">No mínimo 2 litros de água por pessoa, lanches leves (sanduíches, frutas, barras), protetor solar, repelente, documento com foto (obrigatório) e calçado apropriado com boa aderência.</p>
+                    </div>
+                </div>
+                <div class="bg-bg border border-border rounded-xl overflow-hidden">
+                    <button class="w-full text-left p-4 md:p-5 font-semibold flex justify-between items-center focus:outline-none text-[14px] md:text-base text-white" onclick="toggleFaq(this)">
+                        <span data-i18n="f4_q">E se chover no dia?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-accent-2 shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-4 md:p-5 pt-0 text-text-muted text-[13px] md:text-[14px] leading-relaxed" data-i18n="f4_a">A segurança é inegociável. Em caso de chuva forte ou pedra muito molhada, a trilha é remarcada ou o valor é reembolsado. A Carrasqueira molhada é perigosa.</p>
+                    </div>
+                </div>
+                <div class="bg-bg border border-border rounded-xl overflow-hidden">
+                    <button class="w-full text-left p-4 md:p-5 font-semibold flex justify-between items-center focus:outline-none text-[14px] md:text-base text-white" onclick="toggleFaq(this)">
+                        <span data-i18n="f5_q">Quanto tempo dura a atividade?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-accent-2 shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-4 md:p-5 pt-0 text-text-muted text-[13px] md:text-[14px] leading-relaxed" data-i18n="f5_a">Em média de 5 a 6 horas no total (subida, tempo no topo para fotos/descanso e descida). O tempo varia conforme o ritmo do grupo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Mapa / Localização -->
+    <section id="contato" class="py-16 lg:py-24 px-4 md:px-6 bg-bg relative">
+        <div class="max-w-[480px] md:max-w-[720px] lg:max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center reveal">
+            <!-- Info Text -->
+            <div>
+                <h2 class="h2-fluid font-bold text-white mb-4 lg:mb-6" data-i18n="map_title">Onde a aventura começa</h2>
+                <p class="text-text-muted text-[14px] md:text-base mb-6 lg:mb-8 leading-relaxed" data-i18n="map_desc">
+                    O acesso à trilha fica no Parque Nacional da Tijuca (Setor Pedra da Gávea), localizado na Estrada do Sorimã, Barra da Tijuca. O parque tem horário rígido de funcionamento e o ponto de encontro exato será enviado após a confirmação.
+                </p>
+                
+                <div class="bg-surface border border-border p-5 lg:p-6 rounded-2xl flex flex-col gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-accent-2/10 flex items-center justify-center shrink-0">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-accent-2"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-[14px] lg:text-base" data-i18n="map_lbl_loc">Localização</h4>
+                            <p class="text-[13px] text-text-muted" data-i18n="map_val_loc">Estrada do Sorimã - Barra da Tijuca, RJ</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-accent-2/10 flex items-center justify-center shrink-0">
+                            <i data-lucide="clock" class="w-5 h-5 text-accent-2"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-[14px] lg:text-base" data-i18n="map_lbl_time">Horários comuns</h4>
+                            <p class="text-[13px] text-text-muted" data-i18n="map_val_time">Manhã (08h) ou a combinar</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-accent-2/10 flex items-center justify-center shrink-0">
+                            <i data-lucide="message-circle" class="w-5 h-5 text-accent-2"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-[14px] lg:text-base" data-i18n="map_lbl_contact">Contato Rápido</h4>
+                            <p class="text-[13px] text-text-muted font-numbers">+55 21 96775-2633</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mapa iframe -->
+            <div class="w-full h-[300px] lg:h-[400px] rounded-2xl overflow-hidden border border-border">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14695.556272551465!2d-43.29415715!3d-22.989596149999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd0a39dfa32b9%3A0x8f3c7e7f7b3b320!2sPedra%20da%20G%C3%A1vea!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; filter: invert(90%) hue-rotate(180deg) grayscale(80%);" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Oferta Final (Conversão) -->
+    <section class="py-16 lg:py-24 px-4 md:px-6 relative overflow-hidden bg-surface-2 border-y border-border">
+        <!-- Decoration -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] lg:w-[600px] h-[400px] lg:h-[600px] bg-accent opacity-[0.05] rounded-full blur-[80px] lg:blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-[480px] md:max-w-[720px] lg:max-w-[900px] mx-auto text-center relative z-10 reveal">
+            <h2 class="text-[clamp(2rem,8vw,4.5rem)] font-display font-bold text-white leading-tight mb-6 lg:mb-8" data-i18n="final_title">
+                Pronto para conquistar o topo?
+            </h2>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-8 lg:gap-12 mb-10 lg:mb-12 text-text-muted text-[13px] md:text-sm lg:text-base">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-5 h-5 text-accent-2"></i>
+                    <span data-i18n="final_b1">Segurança técnica</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-5 h-5 text-accent-2"></i>
+                    <span data-i18n="final_b2">Guia Multilíngue</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-5 h-5 text-accent-2"></i>
+                    <span data-i18n="final_b3">Fotos incríveis</span>
+                </div>
+            </div>
+            
+            <a href="https://wa.me/5521967752633" target="_blank" class="btn-primary shine-effect text-[15px] md:text-lg px-8 lg:px-12 py-4 lg:py-5 shadow-[0_0_20px_rgba(45,212,191,0.2)] w-full sm:w-auto" data-i18n="final_cta">
+                Agendar Minha Trilha Agora
+                <i data-lucide="arrow-right" class="w-5 h-5 lg:w-6 lg:h-6"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 13. Footer -->
+    <footer class="bg-bg pt-12 lg:pt-16 pb-6 lg:pb-8 px-4 md:px-6">
+        <div class="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-12 mb-10 lg:mb-12">
+            <!-- Brand -->
+            <div class="col-span-1 md:col-span-2">
+                <a href="#" class="flex flex-col items-start mb-4">
+                    <span class="logo-brand font-bold text-2xl text-text leading-none">SCHIMIDT</span>
+                    <span class="text-[10px] tracking-[0.3em] text-accent mt-1 leading-none font-medium">ADVENTURE</span>
+                </a>
+                <p class="text-text-muted text-[13px] lg:text-sm max-w-sm leading-relaxed" data-i18n="footer_desc">
+                    Guia turístico premium especializado na Pedra da Gávea. Experiência, segurança e atendimento multilíngue para tornar sua aventura inesquecível.
+                </p>
+            </div>
+
+            <!-- Links -->
+            <div>
+                <h4 class="font-display text-white text-lg mb-4" data-i18n="footer_links_title">Navegação</h4>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#sobre" class="text-[13px] lg:text-sm text-text-muted hover:text-accent transition-colors" data-i18n="nav_about">Sobre</a></li>
+                    <li><a href="#pacotes" class="text-[13px] lg:text-sm text-text-muted hover:text-accent transition-colors" data-i18n="nav_packages">Pacotes</a></li>
+                    <li><a href="#depoimentos" class="text-[13px] lg:text-sm text-text-muted hover:text-accent transition-colors" data-i18n="nav_testimonials">Depoimentos</a></li>
+                    <li><a href="#faq" class="text-[13px] lg:text-sm text-text-muted hover:text-accent transition-colors" data-i18n="nav_faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h4 class="font-display text-white text-lg mb-4" data-i18n="footer_contact_title">Contato</h4>
+                <ul class="flex flex-col gap-2">
+                    <li class="text-[13px] lg:text-sm text-text-muted flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-accent-2"></i> <span class="font-numbers">+55 21 96775-2633</span></li>
+                    <li class="text-[13px] lg:text-sm text-text-muted flex items-center gap-2 mt-2">
+                        <i data-lucide="instagram" class="w-4 h-4 text-accent-2"></i> <a href="https://www.instagram.com/schimidt_adventure/" target="_blank" class="hover:text-accent">@schimidt_adventure</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-[1100px] mx-auto border-t border-border pt-6 lg:pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-[11px] md:text-xs text-text-muted/60" data-i18n="footer_copy">
+                &copy; 2026 SCHIMIDT ADVENTURE. Todos os direitos reservados.
+            </p>
+            <div class="text-[11px] md:text-xs text-text-muted/60 flex gap-4">
+                <span data-i18n="footer_tag">Segurança em primeiro lugar.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.classList.add('opacity-0');
+                document.body.classList.remove('overflow-hidden');
+                setTimeout(() => preloader.style.display = 'none', 700);
+            }, 1800);
+        });
+
+        // 1. i18n System
+        const translations = {
+            pt: {
+                top_1: "🏆 Guia Especialista Certificado", top_2: "⛰️ +100 Subidas na Gávea", top_3: "🛡️ Segurança em 1º Lugar", top_4: "🌎 Atendimento PT, EN, ES",
+                nav_about: "Sobre", nav_packages: "Pacotes", nav_testimonials: "Depoimentos", nav_faq: "FAQ", nav_contact: "Contato", nav_cta: "Reservar",
+                
+                hero_title: "Sua aventura na Pedra da Gávea começa aqui", hero_subtitle: "Trilha guiada com segurança, ritmo certo e acompanhamento profissional do início ao fim.",
+                hero_btn_primary: "Reservar agora", hero_btn_secondary: "Falar com o guia",
+                badge_certified: "Guia certificado", badge_climbs: "+100 subidas", badge_languages: "Atendimento multilíngue", badge_safety: "Segurança em 1º lugar",
+                ps_title: "Por que não ir sozinho?", ps_subtitle: "A Pedra da Gávea é deslumbrante, mas exige respeito e preparo.",
+                
+                fc1_front_title: "Medo de ir sozinho", fc1_front_desc: "Trilha difícil, sem conhecer o caminho, riscos reais.", fc1_back_title: "Guia ao seu lado", fc1_back_desc: "Do encontro ao topo, você nunca fica sozinho. Segurança total.",
+                fc2_front_title: "Barreira do idioma", fc2_front_desc: "Não fala português e não sabe se comunicar na trilha.", fc2_back_title: "PT, EN e ES", fc2_back_desc: "Suporte completo no seu idioma durante a experiência.",
+                fc3_front_title: "Não sabe o que levar", fc3_front_desc: "Equipamento errado compromete a segurança.", fc3_back_title: "Orientação prévia", fc3_back_desc: "Lista do que levar, dicas de roupa e hidratação antes da saída.",
+                fc4_front_title: "Preparo físico", fc4_front_desc: "Trilha exigente, sem saber se a forma é suficiente.", fc4_back_title: "Ritmo adaptado", fc4_back_desc: "O guia ajusta o pace. Ninguém fica pra trás. Pausas estratégicas.",
+                fc_tap_instruction: "toque para solução", fc_btn: "Agendar",
+
+                about_label: "Seu Guia", about_title: "Alan Schimidt",
+                about_p: "Sou o fundador da SCHIMIDT ADVENTURE. Com atendimento humano, fluência em 3 idiomas e profundo respeito à montanha, garanto que sua experiência na trilha mais icônica do Rio seja segura, no seu ritmo e absolutamente inesquecível.",
+                about_cta1: "Falar no WhatsApp", about_cta2: "Seguir no Instagram",
+                stat_years: "Anos de guia", stat_climbs: "Subidas na Gávea", stat_langs: "Idiomas",
+                
+                quiz_title: "Agilize seu agendamento", quiz_subtitle: "Responda a 5 perguntas rápidas para personalizarmos sua aventura.",
+                q_step: "Passo", quiz_back: "Voltar",
+                q1_text: "Quantas pessoas vão fazer a trilha com você?", q1_o1: "👤 Só eu", q1_o2: "👥 2 pessoas", q1_o3: "👨‍👩‍👦 3 a 5 pessoas", q1_o4: "🙌 6 ou mais",
+                q2_text: "Qual é o seu nível de condicionamento físico?", q2_o1: "🚶 Iniciante", q2_o2: "🏃 Moderado", q2_o3: "💪 Tenho boa forma", q2_o4: "⚡ Atleta",
+                q3_text: "Quando você quer fazer a trilha?", q3_o1: "📆 Esta semana", q3_o2: "📅 Próximas 2 semanas", q3_o3: "🗓️ Este mês", q3_o4: "🤔 Ainda planejando",
+                q4_text: "Qual horário prefere?", q4_o1: "🌄 Manhã cedo (5h-7h)", q4_o2: "☀️ Manhã (7h-9h)", q4_o3: "🌤️ Tarde",
+                q5_text: "Você quer suporte completo do guia durante toda a trilha?", q5_o1: "🛡️ Sim, quero total segurança", q5_o2: "🧭 Quero orientação básica", q5_o3: "❓ Tenho dúvidas",
+                qr_title: "Perfeito! Sua trilha está pronta para ser agendada.", qr_desc: "Prepararemos a melhor experiência para você. Envie os dados para confirmar a disponibilidade!", qr_btn: "Falar com o guia agora",
+
+                pkg_title: "Planos e Investimento", pkg_subtitle: "Escolha o pacote que melhor se adapta à sua necessidade.", pkg_per_person: "/pessoa", pkg_consult: "Sob consulta", pkg_btn: "Agendar este", pkg_btn_group: "Fazer cotação", pkg_special: "Preço Especial", pkg_btn_hostel: "Garantir Desconto", pkg_swipe: "deslize para ver as opções",
+                p1_name: "Plano Prata", p1_target: "Para quem quer o básico com segurança.", p1_f1: "Guiamento profissional ida e volta", p1_f2: "Instrução na Carrasqueira", p1_f3: "Briefing de segurança", p1_f4: "Suporte fotográfico focado",
+                p2_tag: "Mais Recomendado", p2_name: "Plano Ouro", p2_target: "Suporte total, paradas estratégicas e fotos.", p2_f1: "Tudo do pacote Prata", p2_f2: "Ritmo personalizado com pausas", p2_f3: "Suporte psicológico nos trechos difíceis", p2_f4: "Ajuda com fotos nos melhores ângulos",
+                p3_name: "Plano Diamante", p3_target: "VIP, flexibilidade total e exclusividade.", p3_f1: "Horário de saída flexível", p3_f2: "Grupo privativo (só você e acompanhantes)", p3_f3: "Prioridade nos picos de fotos e vídeos", p3_f4: "Apoio logístico especial",
+                p4_name: "CabanaCopa Hostel", p4_target: "Tarifa especial exclusiva para hóspedes.", p4_f1: "Desconto VIP na trilha completa", p4_f2: "Integração com a galera do hostel", p4_f3: "Atenção focada e fotos incríveis", p4_f4: "Organização logística facilitada",
+                
+                test_title: "O que dizem os aventureiros",
+                t1_text: "\"Achei que não conseguiria passar pela Carrasqueira, mas a paciência e a instrução do guia foram fundamentais. Me senti segura o tempo todo!\"", t1_name: "Mariana S.", t1_loc: "São Paulo, BR",
+                t2_text: "\"Best guide ever! Flawless english and incredible knowledge of the mountain. Made a hard hike feel completely organized and safe.\"", t2_name: "John D.", t2_loc: "California, USA",
+                t3_text: "\"Excelente experiencia. El guia nos dio mucha confianza, el ritmo fue perfeito e as fotos na cima ficaram incríveis.\"", t3_name: "Carlos M.", t3_loc: "Buenos Aires, AR",
+                t4_text: "\"Já fiz outras trilhas, mas a organização e o profissionalismo aqui são diferenciados. Dá pra ver que ele realmente se importa com o bem-estar do grupo.\"", t4_name: "Rafael T.", t4_loc: "Rio de Janeiro, BR",
+                
+                faq_title: "Dúvidas Frequentes", faq_subtitle: "Tudo o que você precisa saber antes de subir.",
+                f1_q: "Preciso de equipamento de escalada?", f1_a: "Não. A subida pela Carrasqueira é feita em estilo \"escalaminhada\". Eu oriento exatamente onde colocar mãos e pés, garantindo sua segurança técnica e emocional sem precisar de cordas para subir.",
+                f2_q: "Qualquer pessoa pode fazer a trilha?", f2_a: "A trilha é considerada pesada. Requer um bom condicionamento físico prévio e ausência de problemas cardíacos ou ortopédicos graves. Nós adaptamos o ritmo, mas o esforço físico é real.",
+                f3_q: "O que devo levar na mochila?", f3_a: "No mínimo 2 litros de água por pessoa, lanches leves (sanduíches, frutas, barras), protetor solar, repelente, documento com foto (obrigatório) e calçado apropriado com boa aderência.",
+                f4_q: "E se chover no dia?", f4_a: "A segurança é inegociável. Em caso de chuva forte ou pedra muito molhada, a trilha é remarcada ou o valor é reembolsado. A Carrasqueira molhada é perigosa.",
+                f5_q: "Quanto tempo dura a atividade?", f5_a: "Em média de 5 a 6 horas no total (subida, tempo no topo para fotos/descanso e descida). O tempo varia conforme o ritmo do grupo.",
+                
+                map_title: "Onde a aventura começa", map_desc: "O acesso à trilha fica no Parque Nacional da Tijuca (Setor Pedra da Gávea), localizado na Estrada do Sorimã, Barra da Tijuca. O parque tem horário rígido de funcionamento e o ponto de encontro exato será enviado após a confirmação.",
+                map_lbl_loc: "Localização", map_val_loc: "Estrada do Sorimã - Barra da Tijuca, RJ", map_lbl_time: "Horários comuns", map_val_time: "Manhã (08h) ou a combinar", map_lbl_contact: "Contato Rápido",
+                final_title: "Pronto para conquistar o topo?", final_b1: "Segurança técnica", final_b2: "Guia Multilíngue", final_b3: "Fotos incríveis", final_cta: "Agendar Minha Trilha Agora",
+                footer_desc: "Guia turístico premium especializado na Pedra da Gávea. Experiência, segurança e atendimento multilíngue para tornar sua aventura inesquecível.", footer_links_title: "Navegação", footer_contact_title: "Contato", footer_copy: "© 2026 SCHIMIDT ADVENTURE. Todos os direitos reservados.", footer_tag: "Segurança em primeiro lugar."
+            },
+            en: {
+                top_1: "🏆 Certified Expert Guide", top_2: "⛰️ +100 Gávea Climbs", top_3: "🛡️ Safety First", top_4: "🌎 Service in EN, ES, PT",
+                nav_about: "About", nav_packages: "Packages", nav_testimonials: "Reviews", nav_faq: "FAQ", nav_contact: "Contact", nav_cta: "Book Now",
+                
+                hero_title: "Your Pedra da Gávea adventure starts here", hero_subtitle: "Guided trail with safety, perfect pacing, and professional support from start to finish.",
+                hero_btn_primary: "Book now", hero_btn_secondary: "Talk to the guide",
+                badge_certified: "Certified Guide", badge_climbs: "100+ Climbs", badge_languages: "Multilingual service", badge_safety: "Safety First",
+                ps_title: "Why not go alone?", ps_subtitle: "Pedra da Gávea is stunning, but demands respect and preparation.",
+                
+                fc1_front_title: "Fear of going alone", fc1_front_desc: "Hard trail, unknown path, real risks.", fc1_back_title: "Expert guide by your side", fc1_back_desc: "From meeting to top, you're never alone.",
+                fc2_front_title: "Language barrier", fc2_front_desc: "Don't speak Portuguese to communicate.", fc2_back_title: "EN, ES and PT", fc2_back_desc: "Full support in your language.",
+                fc3_front_title: "Don't know what to pack", fc3_front_desc: "Wrong gear compromises safety.", fc3_back_title: "Prior guidance", fc3_back_desc: "Packing list, tips sent before departure.",
+                fc4_front_title: "Fitness level", fc4_front_desc: "Demanding trail, unsure of condition.", fc4_back_title: "Adapted pace", fc4_back_desc: "The guide adjusts the pace. No one left behind.",
+                fc_tap_instruction: "tap for solution", fc_btn: "Book",
+
+                about_label: "Your Guide", about_title: "Alan Schimidt",
+                about_p: "I am the founder of SCHIMIDT ADVENTURE. With humanized service, fluency in 3 languages, and deep respect for the mountain, I guarantee your experience will be safe, at your pace, and unforgettable.",
+                about_cta1: "Message on WhatsApp", about_cta2: "Follow on Instagram",
+                stat_years: "Years guiding", stat_climbs: "Gávea Climbs", stat_langs: "Languages",
+                
+                quiz_title: "Speed up your booking", quiz_subtitle: "Answer 5 quick questions to personalize your adventure.",
+                q_step: "Step", quiz_back: "Back",
+                q1_text: "How many people will hike with you?", q1_o1: "👤 Just me", q1_o2: "👥 2 people", q1_o3: "👨‍👩‍👦 3 to 5 people", q1_o4: "🙌 6 or more",
+                q2_text: "What is your fitness level?", q2_o1: "🚶 Beginner", q2_o2: "🏃 Moderate", q2_o3: "💪 Good shape", q2_o4: "⚡ Athlete",
+                q3_text: "When do you want to hike?", q3_o1: "📆 This week", q3_o2: "📅 Next 2 weeks", q3_o3: "🗓️ This month", q3_o4: "🤔 Still planning",
+                q4_text: "What time do you prefer?", q4_o1: "🌄 Early morning (5h-7h)", q4_o2: "☀️ Morning (7h-9h)", q4_o3: "🌤️ Afternoon",
+                q5_text: "Do you want full support from the guide?", q5_o1: "🛡️ Yes, total safety", q5_o2: "🧭 Just basic guidance", q5_o3: "❓ I have questions",
+                qr_title: "Perfect! Your hike is ready to be scheduled.", qr_desc: "We will prepare the best experience. Send the details to confirm availability!", qr_btn: "Talk to the guide now",
+
+                pkg_title: "Plans and Investment", pkg_subtitle: "Choose the package that best fits your needs.", pkg_per_person: "/person", pkg_consult: "On request", pkg_btn: "Book this", pkg_btn_group: "Get a quote", pkg_special: "Special Price", pkg_btn_hostel: "Get Discount", pkg_swipe: "swipe to see options",
+                p1_name: "Silver Plan", p1_target: "For those who want the basics safely.", p1_f1: "Professional round-trip guiding", p1_f2: "Instruction at Carrasqueira", p1_f3: "Safety briefing", p1_f4: "Focused photo support",
+                p2_tag: "Most Recommended", p2_name: "Gold Plan", p2_target: "Full support, strategic stops, and photos.", p2_f1: "Everything in the Silver plan", p2_f2: "Personalized pace with breaks", p2_f3: "Psychological support in hard sections", p2_f4: "Help with photos in the best angles",
+                p3_name: "Diamond Plan", p3_target: "VIP, full flexibility and exclusivity.", p3_f1: "Flexible departure time", p3_f2: "Private group (just you and guests)", p3_f3: "Priority at photo and video spots", p3_f4: "Special logistical support",
+                p4_name: "CabanaCopa Hostel", p4_target: "Exclusive special rate for guests.", p4_f1: "VIP discount on the full trail", p4_f2: "Integration with the hostel crew", p4_f3: "Focused attention and amazing photos", p4_f4: "Easy logistical organization",
+                
+                test_title: "What adventurers say",
+                t1_text: "\"I thought I couldn't pass Carrasqueira, but the guide's patience and instruction were fundamental. I felt safe all the time!\"", t1_name: "Mariana S.", t1_loc: "São Paulo, BR",
+                t2_text: "\"Best guide ever! Flawless english and incredible knowledge of the mountain. Made a hard hike feel completely organized and safe.\"", t2_name: "John D.", t2_loc: "California, USA",
+                t3_text: "\"Excellent experience. The guide gave us a lot of confidence, the pace was perfect, and the photos at the top were incredible.\"", t3_name: "Carlos M.", t3_loc: "Buenos Aires, AR",
+                t4_text: "\"I've done other trails, but the organization and professionalism here are different. You can tell he really cares about the group's well-being.\"", t4_name: "Rafael T.", t4_loc: "Rio de Janeiro, BR",
+                
+                faq_title: "Frequently Asked Questions", faq_subtitle: "Everything you need to know before climbing.",
+                f1_q: "Do I need climbing gear?", f1_a: "No. The climb up Carrasqueira is done in a 'scrambling' style. I guide exactly where to put hands and feet, ensuring your technical and emotional safety without needing ropes.",
+                f2_q: "Can anyone do the trail?", f2_a: "The trail is considered hard. It requires good prior physical conditioning and no severe cardiac or orthopedic problems. We adapt the pace, but the physical effort is real.",
+                f3_q: "What should I pack?", f3_a: "At least 2 liters of water per person, light snacks (sandwiches, fruits, bars), sunscreen, repellent, photo ID (mandatory), and appropriate shoes with good grip.",
+                f4_q: "What if it rains?", f4_a: "Safety is non-negotiable. In case of heavy rain or very wet rocks, the hike is rescheduled or refunded. A wet Carrasqueira is dangerous.",
+                f5_q: "How long does it take?", f5_a: "On average 5 to 6 hours total (up, time at the top for photos/rest, and down). The time varies depending on the group's pace.",
+                
+                map_title: "Where the adventure begins", map_desc: "Trail access is in the Tijuca National Park, located at Estrada do Sorimã, Barra da Tijuca. The park has strict operating hours and the exact meeting point will be sent after confirmation.",
+                map_lbl_loc: "Location", map_val_loc: "Estrada do Sorimã - Barra da Tijuca, RJ", map_lbl_time: "Common times", map_val_time: "Morning (08h) or to be arranged", map_lbl_contact: "Quick Contact",
+                final_title: "Ready to conquer the top?", final_b1: "Technical safety", final_b2: "Multilingual Guide", final_b3: "Incredible photos", final_cta: "Book My Hike Now",
+                footer_desc: "Premium tour guide specialized in Pedra da Gávea. Experience, safety, and multilingual service to make your adventure unforgettable.", footer_links_title: "Navigation", footer_contact_title: "Contact", footer_copy: "© 2026 SCHIMIDT ADVENTURE. All rights reserved.", footer_tag: "Safety first."
+            },
+            es: {
+                top_1: "🏆 Guía Experto Certificado", top_2: "⛰️ +100 Subidas en Gávea", top_3: "🛡️ Seguridad ante todo", top_4: "🌎 Atención ES, EN, PT",
+                nav_about: "Nosotros", nav_packages: "Paquetes", nav_testimonials: "Opiniones", nav_faq: "FAQ", nav_contact: "Contacto", nav_cta: "Reservar",
+                
+                hero_title: "Tu aventura en Pedra da Gávea empieza aquí", hero_subtitle: "Sendero guiado con seguridad, ritmo adecuado y apoyo profesional de principio a fin.",
+                hero_btn_primary: "Reservar ahora", hero_btn_secondary: "Hablar con el guía",
+                badge_certified: "Guía Certificado", badge_climbs: "+100 Subidas", badge_languages: "Atención multilingüe", badge_safety: "La seguridad es lo 1º",
+                ps_title: "¿Por qué no ir solo?", ps_subtitle: "Pedra da Gávea es impresionante, pero exige respeto y preparación.",
+                
+                fc1_front_title: "Miedo a ir solo", fc1_front_desc: "Ruta difícil, sin conocer el camino, riesgos reales.", fc1_back_title: "Guía a tu lado", fc1_back_desc: "Del inicio a la cima, nunca estás solo.",
+                fc2_front_title: "Barrera del idioma", fc2_front_desc: "No hablas portugués en el sendero.", fc2_back_title: "ES, EN y PT", fc2_back_desc: "Soporte completo en tu idioma.",
+                fc3_front_title: "No saber qué llevar", fc3_front_desc: "Equipo incorrecto arruina la seguridad.", fc3_back_title: "Orientación previa", fc3_back_desc: "Lista de ropa, comida y consejos antes de salir.",
+                fc4_front_title: "Estado físico", fc4_front_desc: "Ruta exigente, sin saber la condición.", fc4_back_title: "Ritmo adaptado", fc4_back_desc: "El guía ajusta el ritmo. Nadie se queda atrás.",
+                fc_tap_instruction: "toca para solución", fc_btn: "Reservar",
+
+                about_label: "Tu Guía", about_title: "Alan Schimidt",
+                about_p: "Soy el fundador de SCHIMIDT ADVENTURE. Con trato humano, fluidez en 3 idiomas y un profundo respeto a la montaña, garantizo que tu experiencia sea segura, a tu ritmo e inolvidable.",
+                about_cta1: "Hablar en WhatsApp", about_cta2: "Seguir en Instagram",
+                stat_years: "Años de guía", stat_climbs: "Subidas en Gávea", stat_langs: "Idiomas",
+                
+                quiz_title: "Agiliza tu reserva", quiz_subtitle: "Responde 5 preguntas rápidas para personalizar tu aventura.",
+                q_step: "Paso", quiz_back: "Volver",
+                q1_text: "¿Cuántas personas irán contigo?", q1_o1: "👤 Solo yo", q1_o2: "👥 2 personas", q1_o3: "👨‍👩‍👦 3 a 5 personas", q1_o4: "🙌 6 o más",
+                q2_text: "¿Cuál es tu nivel de condición física?", q2_o1: "🚶 Principiante", q2_o2: "🏃 Moderado", q2_o3: "💪 En forma", q2_o4: "⚡ Atleta",
+                q3_text: "¿Cuándo quieres hacer la ruta?", q3_o1: "📆 Esta semana", q3_o2: "📅 Próximas 2 semanas", q3_o3: "🗓️ Este mes", q3_o4: "🤔 Aún planeando",
+                q4_text: "¿Qué horario prefieres?", q4_o1: "🌄 Muy temprano (5h-7h)", q4_o2: "☀️ Mañana (7h-9h)", q4_o3: "🌤️ Tarde",
+                q5_text: "¿Deseas soporte completo del guía?", q5_o1: "🛡️ Sí, máxima seguridad", q5_o2: "🧭 Solo guía básica", q5_o3: "❓ Tengo dudas",
+                qr_title: "¡Perfecto! Tu ruta está lista para agendarse.", qr_desc: "Prepararemos la mejor experiencia. ¡Envía los datos para confirmar disponibilidad!", qr_btn: "Hablar con el guía ahora",
+
+                pkg_title: "Planes e Inversión", pkg_subtitle: "Elige el paquete que mejor se adapte a tus necesidades.", pkg_per_person: "/persona", pkg_consult: "Consultar", pkg_btn: "Reservar este", pkg_btn_group: "Pedir presupuesto", pkg_special: "Precio Especial", pkg_btn_hostel: "Asegurar Descuento", pkg_swipe: "desliza para ver opciones",
+                p1_name: "Plan Plata", p1_target: "Para quienes quieren lo básico con seguridad.", p1_f1: "Guía profesional ida y vuelta", p1_f2: "Instrucción en Carrasqueira", p1_f3: "Charla de seguridad", p1_f4: "Apoyo fotográfico enfocado",
+                p2_tag: "Más Recomendado", p2_name: "Plan Oro", p2_target: "Apoyo total, paradas estratégicas y fotos.", p2_f1: "Todo lo del plan Plata", p2_f2: "Ritmo personalizado con pausas", p2_f3: "Apoyo psicológico en tramos difíciles", p2_f4: "Ayuda con fotos en los mejores ángulos",
+                p3_name: "Plan Diamante", p3_target: "VIP, flexibilidad total y exclusividad.", p3_f1: "Horario de salida flexible", p3_f2: "Grupo privado (solo tú y acompañantes)", p3_f3: "Prioridad en los puntos de fotos y videos", p3_f4: "Apoyo logístico especial",
+                p4_name: "CabanaCopa Hostel", p4_target: "Tarifa especial exclusiva para huéspedes.", p4_f1: "Descuento VIP en la ruta completa", p4_f2: "Integración con la gente del hostel", p4_f3: "Atención enfocada y fotos increíbles", p4_f4: "Organización logística facilitada",
+                
+                test_title: "Lo que dicen los aventureros",
+                t1_text: "\"Pensé que no pasaría la Carrasqueira, pero la paciencia del guía fue fundamental. ¡Me sentí segura todo el tiempo!\"", t1_name: "Mariana S.", t1_loc: "São Paulo, BR",
+                t2_text: "\"Best guide ever! Flawless english and incredible knowledge of the mountain. Made a hard hike feel completely organized and safe.\"", t2_name: "John D.", t2_loc: "California, USA",
+                t3_text: "\"Excelente experiencia. El guía nos dio mucha confianza, el ritmo fue perfecto y las fotos en la cima quedaron increíbles.\"", t3_name: "Carlos M.", t3_loc: "Buenos Aires, AR",
+                t4_text: "\"Ya he hecho otros senderos, pero la organización aquí es diferente. Se nota que realmente se preocupa por el bienestar del grupo.\"", t4_name: "Rafael T.", t4_loc: "Río de Janeiro, BR",
+                
+                faq_title: "Preguntas Frecuentes", faq_subtitle: "Todo lo que necesitas saber antes de subir.",
+                f1_q: "¿Necesito equipo de escalada?", f1_a: "No. La subida por Carrasqueira se hace en estilo de trepada. Te guío exactamente dónde poner manos y pies, asegurando tu seguridad sin necesidad de cuerdas.",
+                f2_q: "¿Cualquier persona puede hacer el sendero?", f2_a: "El sendero se considera pesado. Requiere buen estado físico previo y no tener problemas cardíacos u ortopédicos graves. Adaptamos el ritmo, pero el esfuerzo físico es real.",
+                f3_q: "¿Qué debo llevar en la mochila?", f3_a: "Mínimo 2 litros de agua por persona, snacks ligeros (sándwiches, frutas), protector solar, repelente, identificación con foto y calzado con buen agarre.",
+                f4_q: "¿Qué pasa si llueve?", f4_a: "La seguridad no es negociable. En caso de lluvia fuerte o roca muy mojada, la actividad se reprograma o reembolsa. La Carrasqueira mojada es peligrosa.",
+                f5_q: "¿Cuánto dura la actividad?", f5_a: "En promedio 5 a 6 horas en total (subida, tiempo arriba para fotos/descanso y bajada). El tiempo varía según el ritmo del grupo.",
+                
+                map_title: "Donde comienza la aventura", map_desc: "El acceso es en el Parque Nacional de Tijuca, en la Estrada do Sorimã, Barra da Tijuca. El parque tiene horarios estrictos y el punto de encuentro se enviará tras confirmar.",
+                map_lbl_loc: "Ubicación", map_val_loc: "Estrada do Sorimã - Barra da Tijuca, RJ", map_lbl_time: "Horarios comunes", map_val_time: "Mañana (08h) o a convenir", map_lbl_contact: "Contacto Rápido",
+                final_title: "¿Listo para conquistar la cima?", final_b1: "Seguridad técnica", final_b2: "Guía Multilingüe", final_b3: "Fotos increíbles", final_cta: "Reservar Mi Sendero Ahora",
+                footer_desc: "Guía turístico premium especializado en Pedra da Gávea. Experiencia, seguridad y atención multilingüe para hacer tu aventura inolvidable.", footer_links_title: "Navegación", footer_contact_title: "Contacto", footer_copy: "© 2026 SCHIMIDT ADVENTURE. Todos los derechos reservados.", footer_tag: "La seguridad es lo primero."
+            }
+        };
+
+        let currentLang = 'pt';
+
+        function setLang(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : (lang === 'en' ? 'en-US' : 'es-ES');
+            
+            // Update texts
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = translations[lang][key];
+                    } else {
+                        // Keeps inner icons if any
+                        if(el.children.length > 0 && !el.classList.contains('accordion-content')) {
+                            let hasIcon = false;
+                            let iconHTML = '';
+                            Array.from(el.children).forEach(child => {
+                                if(child.tagName === 'I' || child.tagName === 'svg') {
+                                    hasIcon = true;
+                                    iconHTML = child.outerHTML;
+                                }
+                            });
+                            
+                            if (key === 'q_step') {
+                                let stepNum = el.parentElement.id.replace('quiz-q', '');
+                                el.innerHTML = translations[lang][key] + ' ' + stepNum + (lang==='pt'?' de 5':(lang==='en'?' of 5':' de 5'));
+                            } else if(hasIcon) {
+                                if(el.innerHTML.indexOf('<i') > 0 || el.innerHTML.indexOf('<svg') > 0) {
+                                     el.innerHTML = translations[lang][key] + ' ' + iconHTML;
+                                } else {
+                                     el.innerHTML = iconHTML + ' ' + translations[lang][key];
+                                }
+                            } else {
+                                el.innerHTML = translations[lang][key];
+                            }
+                        } else {
+                            if (key === 'q_step') {
+                                let stepNum = el.parentElement.id.replace('quiz-q', '');
+                                el.innerHTML = translations[lang][key] + ' ' + stepNum + (lang==='pt'?' de 5':(lang==='en'?' of 5':' de 5'));
+                            } else {
+                                el.innerHTML = translations[lang][key];
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Update flags
+            document.querySelectorAll('.lang-flag').forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            lucide.createIcons();
+            
+            if (!document.getElementById('quiz-result').classList.contains('hidden')) {
+                updateQuizResult();
+            }
+        }
+
+        // 3. Mobile Drawer
+        const btnMenu = document.getElementById('btn-menu');
+        const btnClose = document.getElementById('btn-close-menu');
+        const drawer = document.getElementById('mobile-drawer');
+        const overlay = document.getElementById('drawer-overlay');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            const isClosed = drawer.classList.contains('translate-x-full');
+            if (!isClosed) {
+                drawer.classList.add('translate-x-full');
+                drawer.classList.remove('translate-x-0');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+                document.body.style.overflow = '';
+            } else {
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+                drawer.classList.remove('translate-x-full');
+                drawer.classList.add('translate-x-0');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        btnMenu.addEventListener('click', toggleMenu);
+        btnClose.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+        // 4. Quiz Logic
+        let quizAnswers = { q1: '', q2: '', q3: '', q4: '', q5: '' };
+        
+        function answerQuiz(step, answer) {
+            quizAnswers['q' + step] = answer;
+            document.getElementById(`quiz-q${step}`).classList.add('hidden');
+            
+            if (step < 5) {
+                document.getElementById(`quiz-q${step + 1}`).classList.remove('hidden');
+                document.getElementById('quiz-progress').style.width = `${(step + 1) * 20}%`;
+            } else {
+                document.getElementById('quiz-result').classList.remove('hidden');
+                document.getElementById('quiz-progress').style.width = `100%`;
+                updateQuizResult();
+            }
+        }
+
+        function prevQuiz(currentStep) {
+            document.getElementById(`quiz-q${currentStep}`).classList.add('hidden');
+            document.getElementById(`quiz-q${currentStep - 1}`).classList.remove('hidden');
+            document.getElementById('quiz-progress').style.width = `${(currentStep - 1) * 20}%`;
+        }
+
+        function updateQuizResult() {
+            const summary = document.getElementById('quiz-summary-text');
+            const summaryParts = [quizAnswers.q1, quizAnswers.q2, quizAnswers.q3, quizAnswers.q4, quizAnswers.q5].filter(Boolean);
+            
+            let label = currentLang === 'pt' ? 'Resumo:' : (currentLang === 'en' ? 'Summary:' : 'Resumen:');
+            summary.innerHTML = `<strong>${label}</strong> ${summaryParts.join(' • ')}`;
+
+            let waText = '';
+            if (currentLang === 'pt') {
+                waText = `Olá, SCHIMIDT ADVENTURE! Respondi o quiz no site e gostaria de agendar uma trilha.\n\n*Pessoas:* ${quizAnswers.q1}\n*Condicionamento:* ${quizAnswers.q2}\n*Quando:* ${quizAnswers.q3}\n*Horário:* ${quizAnswers.q4}\n*Suporte:* ${quizAnswers.q5}`;
+            } else if (currentLang === 'en') {
+                waText = `Hello, SCHIMIDT ADVENTURE! I answered the quiz on the site and would like to schedule a hike.\n\n*People:* ${quizAnswers.q1}\n*Fitness:* ${quizAnswers.q2}\n*When:* ${quizAnswers.q3}\n*Time:* ${quizAnswers.q4}\n*Support:* ${quizAnswers.q5}`;
+            } else {
+                waText = `¡Hola, SCHIMIDT ADVENTURE! Respondí el quiz en el sitio y me gustaría programar una ruta.\n\n*Personas:* ${quizAnswers.q1}\n*Condición física:* ${quizAnswers.q2}\n*Cuándo:* ${quizAnswers.q3}\n*Horario:* ${quizAnswers.q4}\n*Apoyo:* ${quizAnswers.q5}`;
+            }
+
+            const btn = document.getElementById('quiz-final-btn');
+            btn.href = `https://wa.me/5521967752633?text=${encodeURIComponent(waText)}`;
+        }
+
+        // 5. FAQ Accordion
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            // O Lucide converte as tags <i> em <svg>, então precisamos selecionar o <svg> (ou dar fallback no <i>)
+            const icon = button.querySelector('svg') || button.querySelector('i');
+            const isOpen = content.style.maxHeight;
+
+            document.querySelectorAll('.accordion-content').forEach(el => {
+                el.style.maxHeight = null;
+            });
+            document.querySelectorAll('#faq button svg, #faq button i').forEach(el => {
+                el.style.transform = 'rotate(0deg)';
+            });
+
+            if (!isOpen) {
+                content.style.maxHeight = content.scrollHeight + "px";
+                if (icon) {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            }
+        }
+
+        // 6. Number Counter Animation
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const easeOut = 1 - Math.pow(1 - progress, 4);
+                obj.innerHTML = Math.floor(easeOut * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    obj.innerHTML = end; 
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        const statsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.count-up');
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-val'));
+                        animateValue(counter, 0, target, 2500);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // 7. Scroll Reveal Observer
+        const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -40px 0px" };
+        const revealObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        // 8. Sticky Header
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg', 'bg-bg/95');
+                navbar.classList.remove('h-[70px]', 'md:h-20');
+                navbar.classList.add('h-[60px]', 'md:h-[70px]');
+            } else {
+                navbar.classList.remove('shadow-lg', 'bg-bg/95');
+                navbar.classList.add('h-[70px]', 'md:h-20');
+                navbar.classList.remove('h-[60px]', 'md:h-[70px]');
+            }
+        });
+
+        // 9. Particles Generator
+        function initParticles() {
+            const container = document.getElementById('particles');
+            const numParticles = window.innerWidth < 768 ? 20 : 40;
+            for (let i = 0; i < numParticles; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDuration = `${Math.random() * 10 + 5}s`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                container.appendChild(particle);
+            }
+        }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            initParticles();
+            
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+            const statsContainer = document.getElementById('stats-container');
+            if(statsContainer) statsObserver.observe(statsContainer);
+
+            // Drag-to-scroll for Pricing Carousel
+            const slider = document.getElementById('pricing-slider');
+            if (slider) {
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                slider.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    slider.style.cursor = 'grabbing';
+                    startX = e.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                });
+                slider.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    slider.style.cursor = 'grab';
+                });
+                slider.addEventListener('mouseup', () => {
+                    isDown = false;
+                    slider.style.cursor = 'grab';
+                });
+                slider.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - slider.offsetLeft;
+                    const walk = (x - startX) * 2; 
+                    slider.scrollLeft = scrollLeft - walk;
+                });
+
+                const btnPrev = document.getElementById('slider-prev');
+                const btnNext = document.getElementById('slider-next');
+                const cardWidth = 320 + 24; 
+                
+                if (btnPrev && btnNext) {
+                    btnPrev.addEventListener('click', () => {
+                        slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+                    });
+                    btnNext.addEventListener('click', () => {
+                        slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
