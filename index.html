@@ -168,15 +168,21 @@
             transform: scale(1.1);
         }
 
-        /* Hero Background with Image and Azul Fade */
+        /* Hero Background with Image */
         .hero-bg {
             background-image: 
                 linear-gradient(135deg, rgba(10, 15, 20, 0.95) 0%, rgba(59, 130, 246, 0.3) 50%, rgba(10, 15, 20, 0.95) 100%),
                 url('https://res.cloudinary.com/dm9mnc97u/image/upload/v1776697758/3478261313_18ef5854aa_h_xduap4.jpg');
             background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-position: 80% center; /* Foco na metade direita em dispositivos menores */
             position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .hero-bg {
+                background-position: center;
+                background-attachment: fixed; /* Fixed mantido apenas no desktop para evitar lag no mobile */
+            }
         }
 
         /* Light Sweep Effect (Shine) for Buttons */
@@ -207,7 +213,7 @@
             100% { background-position: -200% center; }
         }
         .text-shine {
-            background: linear-gradient(to right, #FFFFFF 20%, var(--color-accent-2) 40%, #FFFFFF 60%);
+            background: linear-gradient(to right, #FFFFFF 20%, #FBBF24 40%, #FFFFFF 60%); /* Brilho amarelo no texto */
             background-size: 200% auto;
             color: transparent;
             -webkit-background-clip: text;
@@ -220,11 +226,12 @@
             background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.02' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3Ccircle cx='13' cy='13' r='1'/%3E%3C/g%3E%3C/svg%3E");
         }
 
-        /* Scroll Reveal */
+        /* Scroll Reveal (Refatorado para melhor performance) */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+            transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+            will-change: opacity, transform;
         }
         .reveal.active {
             opacity: 1;
@@ -235,10 +242,11 @@
         .particle {
             position: absolute;
             border-radius: 50%;
-            background-color: var(--color-accent-2); /* Changed to blue for synergy */
+            background-color: var(--color-accent-2); /* Voltou para o azul original */
             opacity: 0.25;
             pointer-events: none;
             animation: float 10s infinite ease-in-out alternate;
+            will-change: transform;
         }
         @keyframes float {
             0% { transform: translateY(0) translateX(0); }
@@ -1120,7 +1128,7 @@
     </section>
 
     <!-- 12. Oferta Final (Conversão) -->
-    <section class="py-16 lg:py-24 px-4 md:px-6 relative overflow-hidden bg-surface-2 border-y border-border">
+    <section class="py-16 lg:py-24 px-4 md:px-6 relative overflow-hidden hero-bg border-y border-border">
         <!-- Decoration -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] lg:w-[600px] h-[400px] lg:h-[600px] bg-accent opacity-[0.05] rounded-full blur-[80px] lg:blur-[100px] pointer-events-none"></div>
 
@@ -1571,17 +1579,25 @@
             });
         }, revealOptions);
 
-        // 8. Sticky Header
+        // 8. Sticky Header (Refatorado para não gargalar a rolagem)
         const navbar = document.getElementById('navbar');
+        let isScrolling = false;
+        
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-lg', 'bg-bg/95');
-                navbar.classList.remove('h-[70px]', 'md:h-20');
-                navbar.classList.add('h-[60px]', 'md:h-[70px]');
-            } else {
-                navbar.classList.remove('shadow-lg', 'bg-bg/95');
-                navbar.classList.add('h-[70px]', 'md:h-20');
-                navbar.classList.remove('h-[60px]', 'md:h-[70px]');
+            if (!isScrolling) {
+                window.requestAnimationFrame(() => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('shadow-lg', 'bg-bg/95');
+                        navbar.classList.remove('h-[70px]', 'md:h-20');
+                        navbar.classList.add('h-[60px]', 'md:h-[70px]');
+                    } else {
+                        navbar.classList.remove('shadow-lg', 'bg-bg/95');
+                        navbar.classList.add('h-[70px]', 'md:h-20');
+                        navbar.classList.remove('h-[60px]', 'md:h-[70px]');
+                    }
+                    isScrolling = false;
+                });
+                isScrolling = true;
             }
         });
 
